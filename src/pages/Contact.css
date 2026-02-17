@@ -1,0 +1,391 @@
+/* ------------------------------
+GLOBAL STYLING
+------------------------------ */
+.contact-section-modern {
+    padding: 60px 20px;
+    max-width: 1300px;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+.contact-header-modern {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 10rem;
+}
+
+.gradient-text {
+    font-size: 45px;
+    font-weight: 800;
+    background: #00E0FF;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-header-modern p {
+    font-size: 17px;
+    color: #666;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ------------------------------
+GRID LAYOUT
+------------------------------ */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 45px;
+}
+
+/* ------------------------------
+LEFT SIDE CARD
+------------------------------ */
+.info-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 25px;
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.info-header h2 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+/* Contact Items */
+.contact-items {
+    margin-top: 10px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.contact-item h4 {
+    font-size: 2rem;
+}
+
+.contact-item p {
+    font-size: 1.7rem;
+}
+
+.icon-circle {
+    width: 42px;
+    height: 42px;
+    background: #f2f4ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4b63ff;
+    font-weight: bold;
+}
+
+/* ------------------------------
+ACCORDION
+------------------------------ */
+.hours-accordion {
+    margin-top: 20px;
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: #f7f7ff;
+    border-radius: 10px;
+    padding: 12px 15px;
+    cursor: pointer;
+    border: none;
+    align-items: center;
+}
+
+.flex-items {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+.hours-accordion .flex-items h4{
+    font-size: 2rem;
+}
+.flex-items span {
+    font-size: 2rem;
+}
+
+/* Accordion Content */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    background: #ffffff;
+    margin-top: 6px;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+.accordion-content.open {
+    max-height: 500px;
+    padding: 12px 15px;
+}
+
+.accordion-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-content li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+/* Highlight Today */
+.accordion-content li.today {
+    background: rgba(96, 165, 250, 0.15);
+    color: #1e40af;
+    font-weight: 700;
+    border-radius: 8px;
+    border-bottom: 1px solid transparent;
+    padding: 1rem;
+}
+
+/* Align dot & label */
+.accordion-content li span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hours-accordion h4 {
+    font-size: 1.8rem;
+}
+
+/* ------------------------------
+MAP
+------------------------------ */
+.map-wrapper {
+    margin-top: 20px;
+    width: 100%;
+    height: 260px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ------------------------------
+RIGHT SIDE FORM
+------------------------------ */
+.form-card {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 30px;
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-height: 100%;
+    height: 650px;
+}
+
+.form-card h2 {
+    margin-bottom: 18px;
+    font-size: 2.7rem;
+}
+
+/* Inputs */
+.modern-form .input-group {
+    margin-bottom: 18px;
+}
+
+.modern-form label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+    color: #333;
+}
+
+.modern-form input,
+.modern-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1.6px solid #d0d2ff;
+    outline: none;
+    background: #fafaff;
+    font-size: 15px;
+    transition: 0.25s ease;
+}
+
+.modern-form input:focus,
+.modern-form textarea:focus {
+    border-color: #6a6bff;
+    box-shadow: 0 0 6px rgba(120, 110, 255, 0.4);
+}
+
+/* Submit Button */
+.submit-btn {
+    margin-top: 10px;
+    width: 100%;
+    background: linear-gradient(45deg, #4a6bff, #9d63ff);
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(50, 60, 255, 0.3);
+}
+
+/* ------------------------------
+RESPONSIVENESS
+------------------------------ */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card,
+    .form-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .gradient-text {
+        font-size: 32px;
+    }
+
+    .contact-header-modern p {
+        font-size: 15px;
+    }
+
+    .contact-grid {
+        gap: 25px;
+    }
+
+    .info-card,
+    .form-card {
+        padding: 20px;
+    }
+
+    .icon-circle {
+        width: 35px;
+        height: 35px;
+    }
+
+    .submit-btn {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+/* ===================================
+   SAFARI FONT FIX — CONTACT SECTION
+   Chrome remains untouched
+=================================== */
+@supports (-webkit-touch-callout: none) {
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ===== GRADIENT HEADING ===== */
+  .gradient-text {
+    font-weight: 900;
+    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.25);
+    letter-spacing: -0.01em;
+  }
+
+  /* ===== HEADER PARAGRAPH ===== */
+  .contact-header-modern p {
+    font-weight: 500;
+  }
+
+  /* ===== INFO CARD HEADINGS ===== */
+  .info-header h2 {
+    font-weight: 700;
+  }
+
+  .contact-item h4 {
+    font-weight: 700;
+  }
+
+  .contact-item p {
+    font-weight: 500;
+  }
+
+  /* ===== ACCORDION ===== */
+  .accordion-header h4,
+  .hours-accordion h4 {
+    font-weight: 700;
+  }
+
+  .accordion-content li {
+    font-weight: 500;
+  }
+
+  .accordion-content li.today {
+    font-weight: 800;
+  }
+
+  /* ===== FORM ===== */
+  .form-card h2 {
+    font-weight: 800;
+  }
+
+  .modern-form label {
+    font-weight: 500;
+  }
+
+  .modern-form input,
+  .modern-form textarea {
+    font-weight: 500;
+  }
+
+  /* ===== BUTTON ===== */
+  .submit-btn {
+    font-weight: 700;
+  }
+}
+
+
+@supports (-webkit-touch-callout: none) {
+  .contact-item p,
+  .contact-header-modern p {
+    font-size: 1.05rem;
+  }
+}

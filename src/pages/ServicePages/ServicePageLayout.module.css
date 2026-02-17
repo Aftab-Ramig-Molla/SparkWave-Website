@@ -1,0 +1,858 @@
+/* WebDevelopment.css - Premium Cyber Blue Edition 2025 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.wd-page-wrapper {
+  
+  color: #e0f2fe;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: clip;
+}
+
+.wd-page-wrapper {
+  min-height: 100vh;
+  background: #0b1520;
+}
+
+/* === 1. Hero Section - Deep Blue Space + Floating Blob === */
+.wd-header-section {
+  position: relative;
+  max-height: 80vh;
+  min-height: 620px;
+  background: linear-gradient(135deg, #070f1a 0%, #0f1e36 50%, #141E30 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wd-header-overlay {
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 800 800"xmlns="http://www.w3.org/2000/svg"><path fill="%2300d4ff33" d="M400 100C200 100 100 200 100 400s100 300 300 300c150 0 300-100 300-300S550 100 400 100z" transform="translate(100 100) scale(1.2)"/></svg>') center/cover no-repeat;
+  background-size: 150%;
+  animation: floatBlob 22s infinite ease-in-out;
+  opacity: 0.35;
+  filter: blur(90px);
+}
+
+@keyframes floatBlob {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(8%, -12%) rotate(6deg); }
+}
+
+/* Header Text - Electric Blue Gradient */
+.wd-header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  animation: fadeUp 1.2s ease-out;
+}
+
+.wd-title-large {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(4rem, 5vw, 8rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #00d4ff, #00a3ff, #0077cc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 50px rgba(0, 212, 255, 0.5);
+}
+
+.wd-breadcrumb {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  letter-spacing: 2px;
+  color: #94a3b8;
+}
+.wd-breadcrumb .wd-home{
+  color: white;
+}
+
+.wd-separator { color: #00d4ff; margin: 0 10px; }
+.wd-active-link { color: #00d4ff; font-weight: 600; }
+
+/* Main Layout */
+.wd-main-section {
+  padding: 6rem 0;
+  background: #ffffff !important;     /* ← Pure white */
+  color: #1e293b;
+}
+.wd-main-content{
+    width: 100%;
+}
+.wd-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+  max-width: 1400px;
+  
+  margin: 5rem auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 1024px) {
+  .wd-content-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .wd-sidebar { order: -1; }
+}
+
+/* Fade-up Animations */
+.wd-text-block,
+.wd-media-services-grid,
+.wd-strategy-block {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: fadeUp 0.9s forwards ease-out;
+}
+.wd-text-block { animation-delay: 0.2s; }
+.wd-media-services-grid { animation-delay: 0.4s; }
+.wd-strategy-block { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wd-section-title,
+.wd-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  background:linear-gradient(135deg, #00d4ff, #00a3ff, #0077cc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.wd-paragraph {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #cbd5e1;
+}
+
+.wd-highlight-text,
+.wd-bold-text {
+  color: #00d4ff;
+  font-weight: 600;
+}
+
+.wd-highlight-text::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background:  #00f0ff;
+  bottom: 1px;
+  left: 0;
+  opacity: 0.4;
+  border-radius: 3px;
+}
+
+/* Media + Services Grid */
+.wd-media-services-grid {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  
+  gap: 6rem;
+  margin: 9rem auto;
+  align-items: start;
+  width: 1200px;
+}
+
+
+/* === Strategy Section with Image (Side by Side) === */
+.wd-strategy-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Image takes less space, text takes more */
+  gap: 3rem;
+  align-items: start;
+  
+}
+
+.wd-strategy-img-col img {
+  width: 100%;
+  height: auto;
+  margin-top: 5rem;
+  border-radius: 12px;
+  object-fit: contain;
+  /* Optional: adds a subtle drop shadow to the illustration */
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); 
+}
+
+/* Mobile Response for the inner strategy block */
+@media (max-width: 768px) {
+  .wd-strategy-row {
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 2rem;
+    
+  }
+  
+  .wd-strategy-img-col {
+    order: -1; /* Image on top */
+    max-width: 400px; /* Limit size on mobile */
+    margin: 0 auto;
+  }
+}
+
+/* === UPDATE THESE CLASSES IN YOUR CSS === */
+
+/* 1. Spacing for the List */
+.wd-strategy-list {
+  list-style: none;
+  margin: 1.5rem 0; /* Adds breathing room between para1, the list, and para2 */
+}
+
+/* 2. Ensure Strategy Paragraphs have correct color and spacing */
+.wd-strategy-text-col .wd-paragraph {
+  margin-bottom: 1rem;
+  color: #475569; /* Matches your gray text theme */
+  text-align: left;
+}
+
+/* 3. Refined List Items */
+.wd-strategy-list li {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed #e2e8f0;
+  transition: all 0.3s;
+  line-height: 1.6;
+}
+
+.wd-strategy-list li:last-child {
+    border-bottom: none;
+}
+
+.wd-strategy-list li:hover {
+  color: #0b1520;
+  padding-left: 10px;
+  border-color: #00d4ff;
+}
+
+/* 4. Text Column Alignment */
+.wd-strategy-text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+/* ====== NEW 2025 IMAGE HOVER EFFECT - CYBER GLITCH REVEAL ====== */
+.wd-image-placeholder {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 420px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.wd-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  display: block; /* avoids inline-gap issues */
+}
+
+/* Simple Hover Lift + Glow */
+.wd-image-placeholder:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 212, 255, 0.25);
+}
+
+.wd-image-placeholder:hover img {
+  filter: brightness(1.05) contrast(1.1);
+}
+
+
+/* ====== PREMIUM SERVICES MENU - FULLY COMPATIBLE WITH YOUR JSX ====== */
+.wd-services-menu {
+  background: rgba(20, 30, 48, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  border-radius: 20px;
+  padding: 2rem;
+  height: fit-content;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+
+  width: 400px;      /* Set a fixed sidebar-like width */
+  max-width: 90%;    /* Prevents overflow on smaller screens */
+}
+
+.wd-services-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: #00d4ff;
+  margin-bottom: 1.8rem;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+/* Full clickable link */
+.wd-service-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+  padding: 1.1rem 0;
+  transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 2;
+}
+
+/* Shine effect on hover */
+.wd-service-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+  transition: left 0.7s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.wd-service-item:hover::before {
+  left: 100%;
+}
+
+/* Hover animation */
+.wd-service-link:hover {
+  color: #00d4ff !important;
+  padding-left: 1.4rem;
+  transform: translateX(14px);
+}
+
+.wd-service-link:hover .wd-arrow {
+  transform: translateX(16px);
+}
+
+/* Active state - current page */
+.wd-service-active .wd-service-link {
+  color: #00d4ff !important;
+  font-weight: 700;
+  padding-left: 1.4rem;
+  transform: translateX(14px);
+}
+
+/* Glowing left bar on active */
+.wd-service-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 5px;
+  height: 70%;
+  background: #00d4ff;
+  border-radius: 3px;
+  transform: translateY(-50%);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+  z-index: 3;
+}
+
+/* Arrow & Checkmark */
+.wd-arrow {
+  font-size: 1.7rem;
+  font-weight: bold;
+  transition: transform 0.4s ease;
+  opacity: 0.9;
+}
+
+.wd-checkmark {
+  color: #00d4ff;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.7);
+}
+
+/* Hide arrow when active (checkmark shows instead) */
+.wd-service-active .wd-arrow {
+  display: none;
+}
+
+/* Optional: Subtle pulse on active */
+.wd-service-active .wd-checkmark {
+  animation: pulseCheck 2s infinite;
+}
+
+@keyframes pulseCheck {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Last item no border */
+.wd-services-list li:last-child .wd-service-link {
+  border-bottom: none;
+}
+
+.wd-services-list li {
+  border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+  position: relative;
+}
+
+/* Strategy List */
+.wd-strategy-list li {
+  padding: 1.3rem 0;
+  border-bottom: 1px dashed rgba(0,212,255,0.2);
+  transition: all 0.3s;
+}
+.wd-strategy-list li:hover {
+  color: #00d4ff;
+  padding-left: 12px;
+}
+
+.wd-text-block  .wd-section-title {
+    font-weight: bold;
+    color: black;
+    line-height: 1.7rem;
+    font-size: 4.4rem;
+}
+
+.wd-text-block  .wd-paragraph{
+    padding: 2.4rem 0 2.4rem 0;
+    font-size: 1.4rem;
+}
+.wd-text-block  .wd-paragraph .wd-highlight-text{
+    color: #070f1a;
+    font-size: 1.6rem;
+}
+.wd-strategy-block {
+    margin: 4rem;
+}
+.wd-strategy-block .wd-subtitle{
+    color: #070f1a;
+    font-weight: bold;
+}
+.wd-strategy-block  .wd-strategy-list .wd-highlight-text{
+    color: #070f1a;
+    font-weight: 700;
+}
+.wd-paragraph,
+.wd-strategy-list li {
+  color: #475569 !important;   /* Proper readable gray */
+  line-height: 1.8;
+}
+
+/* Strategy list on white */
+.wd-strategy-list {
+  list-style: none;
+}
+.wd-strategy-list li {
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed #e2e8f0;
+  transition: all 0.3s;
+}
+.wd-strategy-list li:hover {
+  color: #0b1520 !important;
+  padding-left: 12px;
+  border-color: #00d4ff;
+}
+.wd-highlight-text2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: #00f0ff;;
+  bottom: -31px;
+  left: 0;
+  opacity: 0.4;
+  border-radius: 3px;
+}
+
+/* Sidebar Widget - Floating Glass */
+.wd-contact-widget {
+  background: rgba(20, 30, 48, 0.65);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  border-radius: 22px;
+  padding: 2.2rem;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  animation: float 7s infinite ease-in-out;
+}
+
+.wd-phone-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #e8e2e2;
+  margin: 1.5rem 0;
+  
+}
+.wd-widget-title {
+  color: #e8e2e2;
+  line-height: 1.3rem;
+  font-size: 1.6rem;
+}
+.wd-widget-text {
+  color: #dad4d4;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+}
+/* NEW: Two-column layout only for text + sidebar */
+.wd-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;   /* Left content + Right sidebar */
+  gap: 6rem;
+  align-items: start;
+  margin: 6rem auto 0;
+  max-width: 1400px;
+  padding: 0 2rem;
+}
+
+/* Make sidebar sticky */
+    .wd-sidebar {
+    position: sticky;
+    top: 120px;          /* Adjust based on your navbar height */
+    align-self: start;
+    padding: 20px;
+    border-radius: 10px;        /* optional */
+    color: #fff;    
+    height: 40rem;
+    width: 400px;
+    }
+
+/* Fix text color on white background */
+.wd-main-section {
+  background: #ffffff !important;
+  color: #1e293b;
+}
+
+
+/* Contact widget - make it pop on white background */
+.wd-contact-widget {
+  background: linear-gradient(135deg, #141E30, #243B55);
+  color: white !important;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(20,30,48,0.35);
+  animation: float 6s infinite ease-in-out;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+/* Responsive - Stack on mobile */
+@media (max-width: 1024px) {
+  .wd-content-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .wd-sidebar {
+    order: -1;
+    position: static;
+  }
+  .wd-media-services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Banner Section - Electric Blue Gradient */
+.wd-banner-section {
+  background: linear-gradient(135deg, #00d4ff, #0099cc);
+  padding: 7rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wd-banner-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><path fill="%23ffffff18" d="M0,100 Q300,0 600,100 T1000,100 L1000,300 L0,300 Z"/></svg>') bottom repeat-x;
+  animation: wave 18s linear infinite;
+}
+
+@keyframes wave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-1000px); }
+}
+
+.wd-contact-button {
+  margin-top: 2rem;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 1.1rem 3.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.45s;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.wd-contact-button:hover {
+  background: #1e2a3d;
+  color: #141E30;
+  box-shadow: 0 0 50px rgba(255,255,255,0.7);
+  transform: translateY(-6px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wd-media-services-grid { grid-template-columns: 1fr; }
+  .wd-title-large { font-size: 5.5rem; }
+}
+
+
+/* ====================================
+   MOBILE FIRST: ≤ 768px (iPhone, Android)
+==================================== */
+@media (max-width: 768px) {
+  /* Hero */
+  .wd-header-section {
+    min-height: 70vh;
+    padding: 2rem 0;
+  }
+  .wd-title-large {
+    font-size: 4.2rem !important;
+    letter-spacing: -2px;
+    text-align: center;
+  }
+  .wd-breadcrumb {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* Top Grid: Image + Services Menu → Stack vertically */
+  .wd-media-services-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin: 4rem auto !important;
+    width: 90%;
+  }
+
+  /* Image */
+  .wd-image-placeholder {
+    height: 300px;
+    border-radius: 18px;
+  }
+
+  /* Services Menu */
+  .wd-services-menu {
+    padding: 1.8rem;
+    border-radius: 16px;
+  }
+  .wd-services-title {
+    font-size: 1.4rem;
+  }
+
+  /* Bottom Two-Column → Full width stacked */
+  .wd-content-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    margin: 4rem auto !important;
+    padding: 0 1.5rem;
+
+  }
+
+  /* Sidebar/Contact Widget - Full width on mobile */
+  .wd-sidebar {
+    order: 1;
+    position: static;
+    width: 100%;
+    padding: 0;
+    height: 100px;
+  }
+  .wd-contact-widget {
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    height: auto;
+    gap: 1.5rem;
+    
+  }
+  .wd-phone-number {
+    font-size: 2rem;
+  }
+
+  /* Text Content */
+  .wd-text-block .wd-section-title {
+    font-size: 3.2rem !important;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .wd-text-block .wd-paragraph {
+    font-size: 1.15rem;
+    padding: 1.8rem 0;
+    text-align: justify;
+  }
+  .wd-strategy-block {
+    margin: 2rem 0;
+  }
+  .wd-strategy-block .wd-subtitle {
+    font-size: 2.4rem !important;
+    text-align: center;
+  }
+
+  /* Banner */
+  .wd-banner-headline {
+    font-size: 2.6rem;
+    padding: 0 1rem;
+  }
+  .wd-contact-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* ====================================
+   TABLET: 769px – 1024px (iPad, Galaxy Tab)
+==================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .wd-header-section {
+    min-height: 75vh;
+  }
+  .wd-title-large {
+    font-size: 6rem !important;
+  }
+
+  /* Keep Image + Services side-by-side (looks premium) */
+  .wd-media-services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin: 6rem auto;
+    width: 95%;
+  }
+  .wd-image-placeholder {
+    height: 380px;
+  }
+
+  /* Two-column becomes stacked */
+  .wd-content-grid {
+    grid-template-columns:  masonry;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding: 0 3rem;
+  }
+
+  .wd-sidebar {
+    order: -1;
+    position: static;
+  }
+  .wd-contact-widget {
+    padding: 3rem 2rem;
+    border-radius: 22px;
+  }
+
+  .wd-text-block .wd-section-title {
+    font-size: 3.8rem;
+  }
+  .wd-strategy-block .wd-subtitle {
+    font-size: 2.8rem;
+  }
+
+  .wd-banner-headline {
+    font-size: 3.6rem;
+  }
+}
+
+/* Extra polish for landscape phones & small tablets */
+@media (max-width: 400px) {
+  .wd-title-large {
+    font-size: 3.6rem !important;
+  }
+  .wd-text-block .wd-section-title {
+    font-size: 2.8rem !important;
+  }
+  .wd-phone-number {
+    font-size: 1.8rem;
+  }
+    .wd-image-placeholder{
+      width:90%;
+    }
+  .wd-image-placeholder img {
+    width: 450px;
+  }
+}
+@media (max-width: 370px) {
+  .wd-image-placeholder{
+      width:90%;
+    }
+  .wd-image-placeholder img {
+    width: 100%;
+  }
+  .wd-services-menu{
+    width: 350px;
+  }
+}
+
+
+/* =========================================
+    iOS SAFARI – HARD TEXT ISOLATION FIX
+========================================= */
+@supports (-webkit-touch-callout: none) {
+
+  /* 1. Disable ALL visual effects on containers */
+  .wd-header-overlay,
+  .wd-services-menu,
+  .wd-contact-widget,
+  .wd-image-placeholder {
+    display: none !important;
+  }
+
+  /* 2. Re-create layout without effects */
+  .wd-header-section {
+    background: #070f1a !important;
+  }
+
+  /* 3. FORCE text to real text rendering */
+  .wd-title-large,
+  .wd-section-title,
+  .wd-subtitle,
+  .wd-paragraph,
+  .wd-strategy-list li,
+  .wd-phone-number,
+  .wd-widget-title,
+  .wd-widget-text {
+    position: relative;
+    z-index: 9999;
+    transform: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    text-shadow: none !important;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* 4. Safari font compensation */
+  .wd-title-large,
+  .wd-section-title,
+  .wd-subtitle {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .wd-paragraph,
+  .wd-strategy-list li {
+    font-weight: 500;
+  }
+}

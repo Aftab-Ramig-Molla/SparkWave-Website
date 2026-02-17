@@ -1,0 +1,435 @@
+        .faq-container {
+        display: flex;
+        gap: 40px;
+        padding: 60px 80px;
+        background: #fff;
+        background-image: url('../../assets/background_img2.png'); /* adjust path as needed */
+        background-size: cover;       /* makes it cover entire section */
+        background-position: center;  /* centers the image */
+        background-repeat: no-repeat; 
+        }
+
+        .faq-left,
+        .faq-right {
+        flex: 1;
+        }
+
+        /* ----- Section Title with Dash ----- */
+        .section-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        }
+
+        .section-title {
+        color: #6b6bff;
+        font-weight: 700;
+        position: relative;
+        font-size: 2.3rem;
+        
+        }
+
+        .blue-text {
+        color: #3a50ff;
+        }
+
+        .section-dash {
+        flex: 1;
+        border-bottom: 3.5px solid #6b6bff;
+        margin-top: -5px;
+        max-width: 80px;
+        }
+
+        /* ----- Headings ----- */
+        .faq-heading {
+        font-size: 28px;
+        font-weight: 900;
+        margin: 10px 0 25px;
+        color: #333;
+        }
+
+        /* ----- FAQ Section ----- */
+        .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        }
+
+        .faq-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        }
+
+        .faq-item {
+        background: #f9f9f9;
+        border-radius: 6px;
+        padding: 18px 22px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid #eee;
+        }
+
+        .faq-item.active {
+        /* background: #f57929; */
+        background: linear-gradient(45deg, #4a6bff, #9d63ff);
+        color: #fff;
+        /* border-color: #f57929; */
+        border-color: #4a6bff;
+        }
+
+        .faq-question {
+        display: flex;
+        justify-content: space-between;
+        font-size: 17px;
+        font-weight: 600;
+        }
+
+        .faq-answer-box {
+        background: #fff;
+        border: 1px solid #eee;
+        border-top: none;
+        border-radius: 0 0 6px 6px;
+        padding: 18px 22px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+        }
+
+        .faq-answer {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 8px;
+        }
+
+        .faq-icon {
+        font-size: 20px;
+        font-weight: bold;
+        }
+    
+
+        /* ----- Contact Form ----- */
+        .contact-form {
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        }
+
+        .form-row {
+        display: flex;
+        gap: 10px;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 15px;
+        outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+        border-color: #3a50ff;
+        }
+
+        .submit-btn {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        color: #ffffff;
+        background: linear-gradient(90deg, #00E0FF, #007BFF);
+        border: none;
+        border-radius: 50px;
+        padding: 12px 36px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 12px rgba(0, 224, 255, 0.4);
+        letter-spacing: 1px;
+        font-size: 1.3rem !important;
+        }
+
+        .submit-btn:hover {
+        background: linear-gradient(90deg, #007BFF, #00E0FF);
+        box-shadow: 0 0 18px rgba(0, 224, 255, 0.8);
+        transform: translateY(-2px);
+        }
+
+        /* =======================
+        RESPONSIVE MEDIA QUERIES
+        ======================= */
+
+        /* 📱 For tablets (width ≤ 992px) */
+        @media (max-width: 992px) {
+        .faq-container {
+            flex-direction: column;
+            padding: 40px 40px;
+            gap: 60px;
+            background-position: top;
+        }
+
+        .faq-left,
+        .faq-right {
+            width: 100%;
+        }
+
+        .faq-heading {
+            font-size: 24px;
+        }
+
+        .faq-question {
+            font-size: 16px;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+        }
+
+        .form-row {
+            flex-direction: column;
+        }
+
+        .section-dash {
+            max-width: 70px;
+            border-width: 3px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            text-align: center;
+        }
+        }
+
+        /* 📲 For mobile devices (width ≤ 600px) */
+        @media (max-width: 600px) {
+        .faq-container {
+            padding: 30px 20px;
+            gap: 50px;
+        }
+
+        .faq-heading {
+            font-size: 20px;
+            margin-bottom: 18px;
+            
+        }
+
+        .section-title {
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .section-dash {
+            display: none;
+            
+        }
+
+        .faq-item {
+            padding: 14px 16px;
+        }
+
+        .faq-answer-box {
+            padding: 14px 16px;
+        }
+
+        .faq-question {
+            font-size: 15px;
+        }
+
+        .faq-answer {
+            font-size: 13px;
+        }
+
+        .contact-form {
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            font-size: 14px;
+            padding: 10px 12px;
+        }
+
+        .submit-btn {
+            font-size: 1rem !important;
+            padding: 10px 24px;
+            width: 100%;
+            border-radius: 40px;
+        }
+        }
+
+        /* 🖥️ Optional: For very large screens (width ≥ 1400px) */
+        @media (min-width: 1400px) {
+        .faq-container {
+            padding: 80px 140px;
+        }
+
+        .faq-heading {
+            font-size: 32px;
+        }
+    
+
+        .faq-item,
+        .faq-answer-box {
+            font-size: 18px;
+        }
+        }
+
+
+        /* 📱 Responsive for screens ≤ 478px */
+    @media (max-width: 478px) {
+
+    .faq-container {
+        flex-direction: column;
+        padding: 30px 18px;
+        gap: 45px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Left + Right Section Full Width */
+    .faq-left,
+    .faq-right {
+        width: 100%;
+    }
+
+    /* Titles and Headings */
+    .section-title {
+        font-size: 14px;
+        text-align: start;
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .faq-heading {
+        font-size: 20px;
+        line-height: 1.3;
+        margin-bottom: 18px;
+    }
+
+    /* Dash Styling */
+    .section-dash {
+        max-width: 45px;
+        border-width: 2px;
+        margin-top: -25px;
+    }
+
+    /* FAQ Items */
+    .faq-item {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+
+    .faq-item.active {
+        background: #f57929;
+    }
+
+    .faq-question {
+        font-size: 15px;
+        gap: 8px;
+    }
+
+    .faq-answer-box {
+        padding: 14px 16px;
+    }
+
+    .faq-answer {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* Form Section */
+    .contact-form {
+        gap: 18px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        font-size: 14px;
+        padding: 10px 12px;
+        border-radius: 5px;
+    }
+
+    /* Button */
+    .submit-btn {
+        width: 100%;
+        text-align: center;
+        font-size: 1rem !important;
+        padding: 10px 24px;
+        border-radius: 40px;
+    }
+
+    /* Optional: Make section headers align better */
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}
+
+
+/* ===================================
+   SAFARI FONT FIX — FAQ SECTION
+   Chrome remains untouched
+=================================== */
+@supports (-webkit-touch-callout: none) {
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Small section title */
+  .section-title {
+    font-weight: 800; /* Safari fix for 700 */
+  }
+
+  /* Main FAQ heading */
+  .faq-heading {
+    font-weight: 800; /* better than 900 in Safari */
+    letter-spacing: -0.02em;
+  }
+
+  /* FAQ question row */
+  .faq-question {
+    font-weight: 700; /* instead of 600 */
+  }
+
+  /* FAQ answer text */
+  .faq-answer {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  /* Active FAQ (white text on orange) */
+  .faq-item.active .faq-question {
+    font-weight: 800;
+  }
+
+  /* Form inputs & labels */
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-weight: 500;
+  }
+
+  /* Submit button */
+  .submit-btn {
+    font-weight: 700;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .faq-answer {
+    font-size: 16px;
+  }
+}

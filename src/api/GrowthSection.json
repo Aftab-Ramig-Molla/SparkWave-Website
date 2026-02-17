@@ -1,0 +1,57 @@
+[
+    {
+        "id" : 1,
+        "title": "Strategic Digital Planning for Scalable Growth",
+        "description": "Develop a data-driven digital roadmap aligned with your business goals to direct scalable and consistent growth.",
+        "icon": "FiTarget"
+    },
+    {
+        "id" : 2,
+        "title": "Audience Targeting and Customer Acquisition Strategy ",
+        "description": "Reach high-intent audiences with precision targeting that drives engagement and conversions.",
+        "icon": "FaUsers"
+    },
+    {
+        "id" : 3,
+        "title": "Brand Awareness and Visibility",
+        "description": "Increase brand awareness and stand out across competitive digital channels.",
+        "icon": "FaEye"
+    },
+    {
+        "id" : 4,
+        "title": "Lead Generation and Conversion Optimization",
+        "description": "Turn high-intent leads into loyal customers with optimized, performance-driven campaigns.",
+        "icon": "IoIosTrendingUp"
+    },
+    {
+        "id" : 5,
+        "title": " Customer Engagement & Relationship Building",
+        "description": "Build meaningful connections that strengthen trust and drive long-term customer loyalty.",
+        "icon": "FaHandshake"
+    },
+    {
+        "id" : 6,
+        "title": "Data-Driven Marketing & Analytics",
+        "description": "Implement actionable insights and analytics to drive smarter, growth-focused decision making.  ",
+        "icon": "FaChartBar"
+    },
+    {
+        "id" : 7,
+        "title": "Performance Optimization and Market Innovation",
+        "description": "Continuously modify and innovate your strategies for best performance and sustainable competitive advantage.",
+        "icon": "PiArrowsClockwiseBold"
+    },
+    {
+        "id" : 8,
+        "title": " Performance Tracking and ROI Measurement ",
+        "description": "Track campaign performance with clear metrics to maximize ROI and measurable growth.",
+        "icon": "MdLocalActivity"
+    },
+    {
+        "id" : 9,
+        "title": "Dedicated Support and Strategic Collaboration",
+        "description": "Work with a committed team focused on your long-term growth and success.",
+        "icon": "FaHeadset"
+    }
+]
+

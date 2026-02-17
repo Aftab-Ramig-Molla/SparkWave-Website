@@ -1,0 +1,667 @@
+/* --- ServiceOverview.css --- */
+/* iOS font rendering fix */
+
+.service-overview-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 80vh; /* Ensure the section takes up enough space */
+    background-image: url('../../assets/background_img2.png'); /* adjust path as needed */
+    background-size: cover;       /* makes it cover entire section */
+    background-position: center;  /* centers the image */
+    background-repeat: no-repeat; /* prevents repeating */
+    background-attachment: scroll; /* optional: gives a parallax feel */
+    
+    /* spacing for content */
+    text-align: center;
+    overflow: hidden; /* Hide any overflow from scaling */
+}
+.service-overview-section h2{
+    font-size: 3.5rem;
+    font-weight: 600; /* iOS-safe */
+    margin-top: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #0d1a49;
+}
+.services-container {
+    position: relative;
+    width: 600px; /* Define a consistent size for the layout area */
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Optional: background-color for debugging to see the container */
+    /* background-color: rgba(0, 0, 255, 0.1); */
+}
+
+/* Base style for all circles */
+
+
+/* Central Circle Specific Styles */
+.central-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 170px;
+    background: linear-gradient(135deg, #0066ff, #00e0ff);
+    border-color: #0d1a49; /* Darker border for emphasis */
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    z-index: 10;
+    border-radius: 50%;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+.central-circle span{
+    font-size: 3.2rem;
+
+}
+.central-circle h3 {
+    margin: 0;
+    font-size: 2.4rem;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Satellite Circle Specific Styles */
+.satellite-circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    font-size: 1rem;
+    line-height: 1.3;
+    cursor: pointer;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ffffff, #e0f7ff);
+    color: #0d1a49;
+    border: 2px solid rgba(0, 224, 255, 0.4);
+    box-shadow: 0 6px 12px rgba(0, 224, 255, 0.3);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.satellite-circle .service-title{
+    position: relative;
+    margin-left: 6px;
+    margin-right: 50px;
+}
+.satellite-circle .service-title h4 {
+
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    font-weight: 600;
+    color: #0d1a49;
+}
+
+/* iOS-only typography correction */
+@supports (-webkit-touch-callout: none) {
+
+    .service-overview-section h2 {
+        font-weight: 700;
+    }
+
+    .central-circle,
+    .central-circle h3 {
+        font-weight: 700;
+    }
+
+    .satellite-circle {
+        font-weight: 600;
+    }
+
+    .satellite-circle .service-title h4 {
+        font-weight: 700;
+    }
+}
+
+
+/* --- Animated Icon Style --- */
+.service-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+    background: linear-gradient(135deg, #00e0ff, #0066ff);
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.5);
+    transition: all 0.4s ease;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* ✨ Animated gradient glow layer */
+.service-icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #00e0ff, #0066ff, #ff00d4, #00e0ff);
+    background-size: 400% 400%;
+    animation: iconPulse 5s ease infinite;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+/* White overlay to keep icons readable */
+.service-icon::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: radial-gradient(circle at 30% 30%, #ffffff 60%, #f2f9ff);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Icon styling */
+.service-icon svg {
+    position: relative;
+    z-index: 3;
+    font-size: 2rem;
+    color: #0066ff;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.service-icon:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 25px rgba(0, 224, 255, 0.8), 0 0 40px rgba(0, 224, 255, 0.5);
+}
+
+.service-icon:hover svg {
+    color: black;
+}
+
+/* 🔄 Gradient Animation Keyframes */
+@keyframes iconPulse {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+.satellite-circle:hover {
+    box-shadow: 0 0 20px #00e0ff, 0 0 40px rgba(0, 224, 255, 0.4);
+}
+
+
+/* --- Hover Effect --- */
+.service-circle:hover {
+    transform: scale(1.12);
+    box-shadow: 0 10px 25px rgba(0, 224, 255, 0.5);
+    background: linear-gradient(145deg, #00e0ff, #0066ff);
+    color: #fff;
+}
+
+.services-container .satellite-circle {
+    transform: none; /* Reset transform property */
+}
+
+/* 1. Top-Center (0 degrees) - The 1st satellite in the array (2nd child) */
+.services-container :nth-child(2) { 
+    top: -8px;
+    left: 55%;
+    transform: translateX(-60%); /* Only center this one horizontally */
+}
+
+/* 2. Top-Right (60 degrees) - The 2nd satellite (3rd child) */
+.services-container :nth-child(3) { 
+    height: 160px;
+    width: 160px;
+    
+    top: 120px; /* ~100px down */
+    right: 40px; /* ~120px from right */
+    left: auto;
+}
+
+
+/* 3. Bottom-Right (120 degrees) - The 3rd satellite (4th child) */
+.services-container :nth-child(4) { 
+    bottom: 80px; /* ~100px up from bottom */
+    right: 20px; /* ~120px from right */
+    top: auto;
+    left: auto;
+}
+
+/* 4. Bottom-Center (180 degrees) - The 4th satellite (5th child) */
+.services-container :nth-child(5) { 
+    height: 160px;
+    width: 160px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Only center this one horizontally */
+    top: auto;
+}
+
+/* 5. Bottom-Left (240 degrees) - The 5th satellite (6th child) */
+.services-container :nth-child(6) { 
+    bottom: 80px; /* ~100px up from bottom */
+    left:  1px; /* ~120px from left */
+    top: auto;
+    right: auto;
+}
+
+/* 6. Top-Left (300 degrees) - The 6th satellite (7th child) */
+.services-container :nth-child(7) { 
+    height: 160px;
+    width: 160px;
+    top: 110px; /* ~100px down */
+    left: 60px; /* ~120px from left */
+    right: auto;
+}
+
+
+.root-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =================================================== */
+/* TABLET/LANDSCAPE OPTIMIZATION (<= 998px) */
+/* =================================================== */
+
+
+@media screen and (max-width: 998px) {
+
+  /* Slightly smaller main section */
+    .service-overview-section {
+    padding: 3rem 1rem;
+    width: 100%;
+    }
+
+  /* Reduce container size */
+    .services-container {
+    width:80%;
+    height: 480px;
+    margin-top: 1.5rem;
+    }
+
+    /* Title adjustment */
+    .service-overview-section h2 {
+        font-size: 2.4rem;
+        line-height: 1.2;
+    }
+
+    /* Central circle */
+    .central-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+  /* Satellite circles smaller */
+    .satellite-circle {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    }
+.satellite-circle .service-title h4{
+    position: relative;
+    left:50px;
+    text-align: center;
+    width: 150px;
+}
+  /* Maintain orbit symmetry */
+
+  /* 1. Top-Center */
+    .services-container :nth-child(2) {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+  /* 2. Top-Right */
+    .services-container :nth-child(3) {
+    top: 90px;
+    right: 30px;
+    left: auto;
+    width: 700px; 
+    height: 90px;
+    }
+
+  /* 3. Bottom-Right */
+    .services-container :nth-child(4) {
+        bottom: 90px;
+        right: 30px;
+        top: auto;
+        left: auto;
+    }
+
+    /* 4. Bottom-Center */
+    .services-container :nth-child(5) {
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: auto;
+        width: 700px; 
+        height: 90px;
+    }
+
+    /* 5. Bottom-Left */
+    .services-container :nth-child(6) {
+        bottom: 90px;
+        left: 30px;
+        top: auto;
+        right: auto;
+    }
+
+    /* 6. Top-Left */
+    .services-container :nth-child(7) {
+        top: 90px;
+        left: 30px;
+        right: auto;
+        width: 700px; 
+        height: 90px;
+    }
+
+    /* Keep button centered */
+    .root-btn {
+        margin-top: 2rem;
+    }
+}
+
+/* =================================================== */
+/* 2. MOBILE PHONE STACKING (<= 768px) - CRITICAL FIX */
+/* =================================================== */
+
+@media (max-width: 768px) {
+    
+    .service-overview-section {
+        min-height: auto; 
+        height: auto; /* Allow height to collapse to fit stacked content */
+    }
+
+    .service-overview-section h2{
+        margin-top: 10px;
+    }
+    
+    /* Remove all fixed sizing and absolute positioning */
+    .services-container {
+        width: 100%;
+        height: auto; 
+        margin-top: 2rem;
+        /* Switch to a vertical stacking layout */
+        flex-direction: column;
+        gap: 1.2rem; /* Vertical space between stacked items */
+    }
+
+    /* Reset Central Circle placement */
+    .central-circle {
+        order: -1; /* Puts the central circle at the top of the stack */
+        margin-bottom: 2rem;
+        width: 140px;
+        height: 140px;
+    }
+
+    /* CRITICAL: Reset all satellite circles for stacking */
+    .satellite-circle {
+        position: static; /* Removes absolute positioning */
+        transform: none !important; /* Overrides any lingering transforms */
+        margin: 0.5rem auto; /* Centers the circles horizontally */
+        
+        /* Change to a responsive "pill" shape for better tapping/reading */
+        width: 90%; 
+        max-width: 340px; 
+        height: auto; /* Auto height based on padding/content */
+        min-height: 80px;
+        border-radius: 50px; /* Pill shape */
+        
+        /* Reset content display for better text flow in the pill shape */
+        flex-direction: row; 
+        justify-content: space-around; 
+        align-items: center;
+        text-align: left;
+    }
+    
+    /* Ensure no nth-child positioning rules interfere on mobile */
+    .services-container :nth-child(2),
+    .services-container :nth-child(3),
+    .services-container :nth-child(4),
+    .services-container :nth-child(5),
+    .services-container :nth-child(6),
+    .services-container :nth-child(7) {
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+    }
+
+    .sparkwave-btn{
+        margin-top: 19px;
+    }
+}
+
+
+
+
+@media (min-width: 768px) and (max-width: 1042px) {
+    .service-overview-section {
+        min-height: 100vh; 
+        height: 100%; /* Allow height to collapse to fit stacked content */
+        width: 90%;
+        margin: auto;
+    }
+    .service-overview-section h2{
+        margin-top: 10px;
+        font-size: 2.5rem;
+    }
+    .central-circle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    .central-circle h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+/* Satellite Circle Specific Styles */
+.satellite-circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    font-size: 1rem;
+    line-height: 1.3;
+    cursor: pointer;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ffffff, #e0f7ff);
+    color: #0d1a49;
+    border: 2px solid rgba(0, 224, 255, 0.4);
+    box-shadow: 0 6px 12px rgba(0, 224, 255, 0.3);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.satellite-circle .service-title{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50%;
+    margin-top: 25px
+}
+.satellite-circle .service-title h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+}
+/* --- Animated Icon Style --- */
+.service-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+    background: linear-gradient(135deg, #00e0ff, #0066ff);
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.5);
+    transition: all 0.4s ease;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* ✨ Animated gradient glow layer */
+.service-icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #00e0ff, #0066ff, #ff00d4, #00e0ff);
+    background-size: 400% 400%;
+    animation: iconPulse 5s ease infinite;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+/* White overlay to keep icons readable */
+.service-icon::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: radial-gradient(circle at 30% 30%, #ffffff 60%, #f2f9ff);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Icon styling */
+.service-icon svg {
+    position: relative;
+    z-index: 3;
+    font-size: 2rem;
+    color: #0066ff;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.service-icon:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 25px rgba(0, 224, 255, 0.8), 0 0 40px rgba(0, 224, 255, 0.5);
+}
+
+.service-icon:hover svg {
+    color: black;
+}
+
+/* 🔄 Gradient Animation Keyframes */
+@keyframes iconPulse {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+.satellite-circle:hover {
+    box-shadow: 0 0 20px #00e0ff, 0 0 40px rgba(0, 224, 255, 0.4);
+}
+
+
+/* --- Hover Effect --- */
+.service-circle:hover {
+    transform: scale(1.12);
+    box-shadow: 0 10px 25px rgba(0, 224, 255, 0.5);
+    background: linear-gradient(145deg, #00e0ff, #0066ff);
+    color: #fff;
+}
+
+.services-container .satellite-circle {
+    transform: none; /* Reset transform property */
+}
+
+/* 1. Top-Center (0 degrees) - The 1st satellite in the array (2nd child) */
+.services-container :nth-child(2) { 
+    top: -30px;
+    left: 55%;
+    transform: translateX(-60%); /* Only center this one horizontally */
+}
+
+/* 2. Top-Right (60 degrees) - The 2nd satellite (3rd child) */
+.services-container :nth-child(3) { 
+    height: 140px;
+    width: 140px;
+    
+    top: 100px; /* ~100px down */
+    right: 40px; /* ~120px from right */
+    left: auto;
+}
+
+
+/* 3. Bottom-Right (120 degrees) - The 3rd satellite (4th child) */
+.services-container :nth-child(4) { 
+    bottom: 40px; /* ~100px up from bottom */
+    right: 20px; /* ~120px from right */
+    top: auto;
+    left: auto;
+}
+
+/* 4. Bottom-Center (180 degrees) - The 4th satellite (5th child) */
+.services-container :nth-child(5) { 
+    height: 140px;
+    width: 140px;
+    bottom: -5px;
+    left: 48%;
+    transform: translateX(-50%); /* Only center this one horizontally */
+    top: auto;
+}
+
+/* 5. Bottom-Left (240 degrees) - The 5th satellite (6th child) */
+.services-container :nth-child(6) { 
+    bottom: 70px; /* ~100px up from bottom */
+    left:  1px; /* ~120px from left */
+    top: auto;
+    right: auto;
+}
+
+/* 6. Top-Left (300 degrees) - The 6th satellite (7th child) */
+.services-container :nth-child(7) { 
+    height: 140px;
+    width: 140px;
+    top: 70px; /* ~100px down */
+    left: 60px; /* ~120px from left */
+    right: auto;
+}
+
+
+.root-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}

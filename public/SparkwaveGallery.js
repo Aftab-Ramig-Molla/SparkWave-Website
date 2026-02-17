@@ -1,0 +1,18 @@
+    export const MOCK_IMAGES = [
+        { id: 1, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765448745/img15_b18agn.jpg', alt: 'Office days are better when they look like this. 💼🚀' },
+        { id: 2, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765448816/img16_jmcbwi.jpg', alt: 'console.log("Happy Birthday Aftab!"); to our office web developer ☕️🎈' },
+        { id: 3, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765517264/img15_xexpsw.jpg', alt: 'Happy Birthday to our video expert, Srimoiee! 🎥🎈 Keep shining!' },
+        { id: 4, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765517264/img16_shklk7.jpg', alt: 'Happy Birthday to our video expert, Srimoiee! 🎥🎈 Keep shining!' },
+        { id: 5, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765448675/img11_h7jqwf.jpg', alt: 'Happy birthday to our office video editor expert Amit Mondal 🎥🎈' },
+        { id: 6, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765448670/img8_lqnoje.jpg', alt:  'Happy Birthday to our founder, Raju Sen! 🎂✨ #TeamSparkwave' },
+        { id: 7, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765448670/img7_c25ar7.jpg', alt: 'Happy Birthday to our founder, Raju Sen! 🎂✨ #TeamSparkwave' },
+        { id: 8, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765448670/img6_abt1hu.jpg', alt: 'Happy Birthday to our founder, Raju Sen! 🎂✨ #TeamSparkwave' },
+        { id: 9, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765448670/img4_xwyqck.jpg', alt:  'Office mode: Spiritual. 🙏 Starting our new journey with blessings.' },
+        { id: 10, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765448670/img9_vxlud0.jpg', alt: 'Office mode: Spiritual. 🙏 Starting our new journey with blessings.' },
+        { id: 11, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765448670/img5_inhdzq.jpg', alt: 'console.log("Happy Birthday Aftab!"); to our office web developer ☕️🎈' },
+        { id: 12, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765448669/img1_p6uxm0.jpg', alt: 'Happy birthday to our office video editor expert Amit Mondal 🎥🎈' },
+        { id: 13, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765448669/img2_xyyywn.jpg', alt: 'Switching off "Professional Mode." 📴💃' },
+        { id: 14, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765448669/img10_sjfgsp.jpg', alt: 'Working...' },
+        { id: 15, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765448669/img3_fn7jjt.jpg', alt: 'Happy Birthday to our founder, Raju Sen! 🎂✨ #TeamSparkwave' },
+        { id: 16, src: 'https://res.cloudinary.com/drpcl4uj3/image/upload/v1765517265/img13_bnerbi.jpg', alt: 'Happy Birthday to our video expert, Srimoiee! 🎥🎈 Keep shining!' },
+    ];

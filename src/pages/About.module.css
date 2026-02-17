@@ -1,0 +1,590 @@
+/* ===============================
+   GLOBAL SECTION STYLES
+================================ */
+.about-section {
+  max-width: 100%;
+  background: #f8f9fc;
+  color: #222;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1.2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #666;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* ===============================
+    TOP ABOUT IMAGE
+================================ */
+.about-image {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05); /* prevents blur edge cut */
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  padding: 1rem;
+}
+
+.about-overlay h1 {
+  font-size: 5.5rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+
+  background: linear-gradient(90deg, #1aa7ff, #00e0ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-transform: uppercase;
+  text-shadow: 0 0 25px rgba(0, 224, 255, 0.35);
+}
+
+
+.about-overlay p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+
+/* ===============================
+  ABOUT US SECTION
+================================ */
+.about-us-section {
+  padding: 4rem 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22rem;
+}
+
+.about-us-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-image-col img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.about-text-col .subtitle {
+  color: #007bff;
+  font-weight: 600;
+  font-size: 3.2rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.about-text-col h2 {
+  font-size: 2.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.about-text-col p {
+  color: #212020;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn {
+  padding: 1rem;
+  border-radius: 30px;
+  width: 200px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+/* ===============================
+   MISSION & VISION
+================================ */
+.mission-vision-section {
+  background: #f8f9fc;
+  padding: 4rem 0;
+}
+.mission-vision-section .section-title{
+  font-size: 3rem;
+  color: #0056b3;
+}
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.mission-col,
+.vision-col {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+.mission-col p,
+.vision-col p {
+  color: #2d2c2c;
+  line-height: 1.7;
+  font-size: 1.4rem;
+}
+
+/* ===============================
+   SKILLS & STATS
+================================ */
+.skills-stats-section {
+  padding: 4rem 0;
+  height: 80vh;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  
+}
+
+.skills-stats-grid {
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  gap: 5rem; 
+}
+.skill-container{
+  width: 100%;
+}
+.skills-stats-grid .skills-col{
+  padding: 2rem;
+  gap: 2rem;
+}
+.skills-col h3 {
+  font-size: 3.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.skills-col p {
+  color: #181616;
+  margin-bottom: 2rem;
+}
+
+/* Skill Bars */
+.skill-bar {
+  margin-bottom: 1.9rem;
+}
+
+.skill-bar-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.skill-bar-progress-bg {
+  width: 100%;
+  height: 8px;
+  background: #e5e5e5;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.skill-bar-progress-fg {
+  height: 100%;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  border-radius: 20px;
+  transition: width 1s ease;
+}
+
+/* Stats */
+.stats-col{
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically (optional) */
+  width: 100%;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.5rem;
+  width: 100%;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff;
+  padding: 1.5rem;
+  height: 120px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+.stat-item strong {
+  font-size: 3.8rem;
+  color: #007bff;
+}
+
+.stat-item span {
+  display: block;
+  margin-top: 5px;
+  font-size: 1.6rem;
+  color: #292727;
+}
+
+/* ===============================
+   VIDEO SECTION
+================================ */
+.video-section {
+  padding: 4rem 0;
+  background: #f8f9fc;
+}
+.video-section .section-title{
+  font-size: 3.2rem;
+}
+
+.video-responsive-wrapper {
+  margin-top: 2rem;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video-responsive-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+/* ===============================
+   JOIN JOURNEY CTA
+================================ */
+.join-journey-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: #fff;
+}
+.join-journey-section .section-title{
+  font-size: 4rem;
+}
+.join-journey-section .btn-primary {
+  background: #fff;
+  color: #007bff;
+  font-size: 1.5rem;
+}
+.join-journey-section .btn-primary:hover{
+  background-color: #007bff;
+  color: white;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 576px) {
+
+  /* ===== TOP IMAGE ===== */
+  .about-image {
+    height: 260px;
+  }
+
+  .about-overlay h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+
+  .about-overlay p {
+    font-size: 1.3rem;
+  }
+
+  /* ===== ABOUT US ===== */
+  .about-us-section {
+    height: auto;
+    padding: 3rem 0;
+  }
+
+  .about-us-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .about-text-col .subtitle {
+    font-size: 2rem;
+  }
+
+  .about-text-col h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text-col p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 160px;
+    font-size: 1.2rem;
+  }
+
+  /* ===== MISSION & VISION ===== */
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .mission-vision-section .section-title {
+    font-size: 2rem;
+  }
+
+  .mission-col p,
+  .vision-col p {
+    font-size: 1rem;
+  }
+
+  /* ===== SKILLS & STATS ===== */
+  .skills-stats-section {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .skills-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .skills-col h3 {
+    font-size: 2.4rem;
+  }
+
+  .skill-bar-info {
+    font-size: 1.1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-item strong {
+    font-size: 2.8rem;
+  }
+
+  .stat-item span {
+    font-size: 1.2rem;
+  }
+
+  /* ===== VIDEO ===== */
+  .video-section .section-title {
+    font-size: 2.2rem;
+  }
+
+  /* ===== CTA ===== */
+  .join-journey-section .section-title {
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 992px) {
+
+  /* ===== TOP IMAGE ===== */
+  .about-image {
+    height: 350px;
+  }
+
+  .about-overlay h1 {
+    font-size: 3.5rem;
+  }
+
+  /* ===== ABOUT US ===== */
+  .about-us-section {
+    height: auto;
+    padding: 4rem 0;
+  }
+  .about-image-col{
+    width:  80%;
+    margin: auto;
+  }
+
+  .about-us-grid {
+    grid-template-columns: 80%;
+    gap: 3rem;
+    margin-left: 30px;
+  }
+
+  .about-text-col .subtitle {
+    font-size: 3.5rem;
+  }
+
+  .about-text-col h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-text-col p {
+    font-size: 1.4rem;
+  }
+
+  /* ===== MISSION & VISION ===== */
+  .mission-vision-grid {
+    grid-template-columns: 80%;
+    margin-left: 20px;
+  }
+
+  .mission-vision-section .section-title {
+    font-size: 2.5rem;
+  }
+
+  /* ===== SKILLS & STATS ===== */
+  .skills-stats-section {
+    height: auto;
+    padding: 4rem 2rem;
+  }
+
+  .skills-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .skills-col h3 {
+    font-size: 3rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ===== CTA ===== */
+  .join-journey-section .section-title {
+    font-size: 3rem;
+  }
+}
+
+
+
+
+
+/* ===================================
+   SAFARI FONT FIX — ABOUT PAGE
+   Chrome stays exactly the same
+=================================== */
+@supports (-webkit-touch-callout: none) {
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ===== HERO GRADIENT TITLE ===== */
+  .about-overlay h1 {
+    font-weight: 900;
+    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.25);
+    letter-spacing: 2px;
+  }
+
+  /* ===== SECTION TITLES ===== */
+  .section-title {
+    font-weight: 800;
+  }
+
+  .about-text-col .subtitle {
+    font-weight: 800;
+  }
+
+  .about-text-col h2 {
+    font-weight: 700;
+  }
+
+  /* ===== BODY TEXT ===== */
+  .about-text-col p,
+  .mission-col p,
+  .vision-col p,
+  .skills-col p {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  /* ===== SKILL LABELS ===== */
+  .skill-bar-info {
+    font-weight: 600;
+  }
+
+  /* ===== STATS ===== */
+  .stat-item strong {
+    font-weight: 900;
+  }
+
+  .stat-item span {
+    font-weight: 600;
+  }
+
+  /* ===== CTA TITLE ===== */
+  .join-journey-section .section-title {
+    font-weight: 900;
+  }
+
+  /* ===== BUTTON ===== */
+  .btn {
+    font-weight: 700;
+  }
+}
+
+
+@supports (-webkit-touch-callout: none) {
+  .about-text-col p,
+  .mission-col p,
+  .vision-col p {
+    font-size: 1.45rem;
+  }
+}

@@ -1,0 +1,228 @@
+    /* hero section */
+
+    /* Ensures the hero starts right at the top, fixing the margin space from the last step */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont,
+                'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+    }
+
+    /* The main container for the hero content and background */
+    .hero-section {
+        /* Set the height to fill the screen, subtracting the navbar height  */
+        height: calc(100vh - .1px);
+        padding: 0 3.2rem; /* Add horizontal padding to align with your navbar grid padding */
+        width: 100%;
+        /* BACKGROUND FIX: Ensure the light background image covers and is positioned correctly */
+        background: url("../../assets/background_img.png");
+        background-size: contain;        /* CRITICAL: Makes the image cover the container */
+        background-position: bottom right; /* Places the subtle pattern towards the bottom right */
+        background-repeat: no-repeat;
+        /* FLEX/GRID ALIGNMENT: Centers the content vertically within the hero section */
+        display: flex;
+        align-items: center; /* Vertically center the .container div */
+    }
+    /* --- 2. GRID LAYOUT FOR HERO CONTENT --- */
+
+    .hero-section .container {
+        /* Assuming your 'grid-two-cols' is applied here */
+        display: grid;
+        /* Create two columns: The first for text, the second for the image */
+        grid-template-columns: 1fr 1fr; 
+        align-items: center;
+        gap: 4rem; /* Space between the text and the image */
+        margin-top: 10rem;
+    }
+
+    /* --- 3. TYPOGRAPHY & BUTTON STYLING (Based on Screenshot) --- */
+
+    /* H1 STYLING */
+    .hero-content{
+        padding: 5rem;
+    }
+    .hero-content .heading-xl {
+        /* Text Color is Dark Blue/Black based on the screenshot */
+        color: #0d1a49; 
+        font-size: 4.2rem; 
+        font-weight: 700;
+        line-height: 1.1;
+        margin-top: 0;      /* Remove H1's default top margin */
+        margin-bottom: 2rem;
+    }
+    .hero-content .heading-xl span{
+        color: #38c2ff;
+    }
+
+    /* PARAGRAPH STYLING */
+    .hero-content .paragraph {
+        /* Text color is a softer dark gray */
+        color: #495057; 
+        font-size: 1.3rem;
+        font-weight: 500; /* KEY FIX */
+        line-height: 1.6;
+        margin-top: 4rem;
+        margin-bottom: 2.5rem;
+        max-width: 550px; /* Keeps line length readable */
+    }
+
+    /* CTA BUTTON STYLING */
+    .sparkwave-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        
+        /* Background matches the light blue accent color in the design */
+        background-color: #38c2ff; 
+        color: white; 
+        
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Spacing for the arrow icon */
+    .sparkwave-btn svg {
+        margin-left: 0.5rem;
+    }
+
+    .sparkwave-btn:hover {
+        background-color: #0099e6; /* Slightly darker blue on hover */
+    }
+
+    /* --- 4. IMAGE SIZING --- */
+    .hero-image {
+        /* Ensures the image container aligns nicely */
+        display: flex;
+        justify-content: flex-end; /* Pushes the image to the right of its grid cell */
+    }
+
+    .hero-image .banner-image {
+        /* Ensures the image scales down if needed and prevents overflow */
+        max-width: 100%; 
+        height: 420px; 
+        width: 420px;
+        display: block;
+    }
+
+
+
+
+    /* === MEDIA QUERIES FOR RESPONSIVE DESIGN === */
+
+/* Mobile (up to 767px) - Small screens, phones */
+@media (max-width: 767px) {
+    .hero-section {
+        height: auto;              /* Allow natural height instead of full viewport */
+        min-height: 80vh;          /* Keep it tall but flexible */
+        padding: 0 1.5rem;         /* Reduce horizontal padding for smaller screens */
+        padding-top: 8rem;         /* Adjust top padding (accounts for navbar) */
+        background-position: bottom center; /* Center the background image on mobile */
+        background-size: cover;    /* Better coverage on small screens */
+        align-items: flex-start;   /* Start content from top for better flow */
+        
+    }
+
+    .hero-section .container {
+        grid-template-columns: 1fr; /* Stack columns vertically */
+        gap: 1rem;                 /* Reduce gap */
+        text-align: center;        /* Center text for mobile */
+    }
+
+    .hero-content .heading-xl {
+        font-size: 3.2rem;         /* Significantly smaller heading */
+        line-height: 1.2;
+    }
+
+    .hero-content .paragraph {
+        font-size: 1.2rem;
+        max-width: none;           /* Full width on mobile */
+    }
+
+    .hero-image {
+        justify-content: center;   /* Center the image */
+        order: -1;                 /* Move image above text on mobile (optional - remove if you prefer text first) */
+    }
+
+    .hero-image .banner-image {
+        width: 100%;
+        height: auto;              /* Let height adjust proportionally */
+        max-width: 350px;          /* Limit max size */
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero-section {
+        height: calc(100vh - 0.1px);
+        padding: 7rem 2rem;
+        background-size: cover;
+    }
+    .hero-section .container{
+        margin-top: 10rem;
+    }
+
+    .hero-section .container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .hero-content {
+        padding: 2rem;
+    }
+
+    .hero-content .heading-xl {
+        font-size: 4.2rem;
+        line-height: 1.15;
+    }
+
+    .hero-content .paragraph {
+        font-size: 1.25rem;
+        max-width: 520px;
+    }
+
+    .hero-image .banner-image {
+        width: 330px;
+        height: 330px;
+    }
+}
+
+
+
+/* Tablet (768px to 1023px) */
+/* @media (min-width: 768px)  {
+    .hero-section {
+        padding: 0 2rem;
+        padding-top: 9rem;
+        height: calc(100vh - .1px);
+        background-size: cover;
+    }
+
+    .hero-section .container {
+        grid-template-columns: 1fr 1fr; 
+        gap: 3rem;
+    }
+
+    .hero-content .heading-xl {
+        font-size: 3.8rem;         
+    }
+
+    .hero-content .paragraph {
+        font-size: 1.2rem;
+    }
+
+    .hero-image .banner-image {
+        width: 400px;
+        height: 400px;
+    }
+} */
+
+
+
+/* Desktop (1024px and above) - Your original styles already apply here */
+/* No changes needed for large screens, as the base CSS is optimized for desktop */
+

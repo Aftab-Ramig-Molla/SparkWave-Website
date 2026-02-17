@@ -1,0 +1,313 @@
+/* ===================================
+   SAFARI FONT WEIGHT FIX (TEAM SECTION)
+   Chrome stays exactly the same
+=================================== */
+@supports (-webkit-touch-callout: none) {
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Section title */
+  .expert-title {
+    font-weight: 800;   /* fixes Safari thin rendering */
+    letter-spacing: 0.5px;
+  }
+
+  /* Member name */
+  .member-name {
+    font-weight: 800;
+  }
+
+  /* Member role/title */
+  .member-title {
+    font-weight: 600;
+  }
+}
+
+.team-section {
+  padding: 60px 20px;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  margin: auto;
+  background-image: url('../../assets/background_img2.png'); /* adjust path as needed */
+  background-size: cover;       /* makes it cover entire section */
+  background-position: center;  /* centers the image */
+  background-repeat: no-repeat;
+}
+.expert-container{
+  max-width: 1300px;
+  margin: auto;
+}
+.expert-title {
+  font-size: 2.9rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #1a1a1a;
+  letter-spacing: 1px;
+}
+
+/* ---- Carousel Container ---- */
+.carousel-container {
+  position: relative;
+  width:100%;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  border: none;
+  color: #333;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.arrow-btn:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: #ff5733;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow-btn.left {
+  left: -60px;
+}
+
+.arrow-btn.right {
+  right: -60px;
+}
+
+/* ---- Scrollable Members ---- */
+.team-members-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  width: 100%;
+  margin: auto;
+}
+
+.team-members-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.team-members-scroll {
+  display: flex;
+  gap: 35px;
+  padding: 10px;
+}
+
+/* ---- Card Design ---- */
+.team-member-card {
+  flex: 0 0 auto;
+  width: 250px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 15px;
+  transition: all 0.4s ease;
+}
+
+.team-member-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.member-image-container {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease;
+}
+
+.member-image.color {
+  opacity: 0;
+}
+
+.team-member-card:hover .member-image.color {
+  opacity: 1;
+}
+
+.team-member-card:hover .member-image.grayscale {
+  opacity: 0;
+}
+
+.linkedin-icon {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #f8f9fb;
+  color:#0077b5;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1.9rem;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-member-card:hover .linkedin-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.member-name {
+  margin-top: 18px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.member-title {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+
+
+/* ===== Responsive Design ===== */
+
+/* For tablets and smaller laptops */
+@media (max-width: 1024px) {
+  .team-section{
+    width: 100%;
+  }
+  .team-members-wrapper {
+    max-width: 80%;
+    margin-right: 100px;
+    
+  }
+
+  .team-member-card {
+    width: 220px;
+  }
+
+  .arrow-btn.left {
+    /* left: 0px; */
+    display: none;
+  }
+
+  .arrow-btn.right {
+    /* right: 100px; */
+    display: none;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .team-section {
+    padding: 40px 10px;
+    width: 100%;
+  }
+  .team-members-wrapper {
+    max-width: 100%;
+    margin-right: 310px;
+  }
+
+  .expert-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .team-member-card {
+    width: 200px;
+    padding: 12px;
+  }
+
+  .member-image-container {
+    height: 180px;
+  }
+
+  .member-name {
+    font-size: 1.1rem;
+  }
+
+  .member-title {
+    font-size: 0.9rem;
+  }
+
+  .arrow-btn {
+    /* font-size: 1.5rem;
+    padding: 8px;
+    top: 50%; */
+    display: none;
+  }
+}
+
+/* For small mobile devices */
+@media (max-width: 480px) {
+  .team-section {
+    padding: 30px 5px;
+  }
+
+  .expert-title {
+    font-size: 1.5rem;
+    width: 100%;              /* make title full width */
+    text-align: center;       /* center the text */
+    /* center block and add spacing below */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .team-member-card {
+    width: 170px;
+    padding: 10px;
+  }
+
+  .member-image-container {
+    height: 150px;
+  }
+
+  .arrow-btn {
+    font-size: 1.3rem;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.5); 
+    
+  }
+
+  
+
+  .linkedin-icon {
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+}

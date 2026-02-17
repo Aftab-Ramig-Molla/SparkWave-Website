@@ -1,0 +1,251 @@
+    /* --- Section Styling --- */
+  .testimonials-section {
+  width: 100%;
+  padding: 80px 10%;
+  background: #fff;
+  text-align: center;
+  background-image: url('../../assets/background_img2.png'); /* adjust path as needed */
+  background-size: cover;       /* makes it cover entire section */
+  background-position: center;  /* centers the image */
+  background-repeat: no-repeat;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  cursor: grab;
+  user-select: none;
+}
+
+.cards-container:active {
+  cursor: grabbing;
+}
+
+.testimonial-card {
+  width: 30%;
+  text-align: center;
+}
+
+.testimonial-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.testimonial-card h3 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.testimonial-card span {
+  color: #888;
+  font-size: 14px;
+}
+
+.testimonial-card p {
+  font-size: 15px;
+  color: #777;
+  line-height: 1.6;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #007bff;
+}
+
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.testimonial-card {
+  width: 30%;
+  background: #ffffff;
+  padding: 20px;
+}
+
+.testimonial-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.testimonial-card h3 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.testimonial-card span {
+  font-size: 15px;
+  font-weight: 700;
+  color: #888;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.testimonial-card p {
+  font-size: 15px;
+  color: #777;
+  line-height: 1.7;
+}
+
+.dots {
+  margin-top: 40px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 6px;
+}
+
+.dot.active {
+  background: #007bff;
+}
+
+
+/* =========================================
+MEDIA QUERIES
+   ========================================= */
+
+/* Tablet Version (max-width: 1024px) */
+/* Tablet Devices */
+@media screen and (max-width: 1024px) {
+
+  .testimonials-section {
+    padding: 60px 5%;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .cards-container {
+    gap: 25px;
+    justify-content: center;
+  }
+
+  .testimonial-card {
+    width: 45%; /* 2 cards per row */
+    padding: 18px;
+  }
+
+  .testimonial-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .testimonial-card h3 {
+    font-size: 17px;
+  }
+
+  .testimonial-card p {
+    font-size: 14px;
+  }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 445px) {
+
+  .testimonials-section {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    padding: 1.2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+
+  .testimonial-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .testimonial-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .testimonial-card span {
+    font-size: 0.9rem;
+  }
+
+  .testimonial-card p {
+    font-size: 0.95rem;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  
+}
+
+@media screen and (max-width: 445px) {
+  .testimonials-section {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cards-container {
+    gap: 10px; /* Smaller gap on mobile */
+  }
+
+  .testimonial-card {
+    padding: 1.2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+
+  .testimonial-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .testimonial-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  /* On mobile, we rely on the React Logic to show 1 card.
+     This CSS ensures that 1 card takes up full width comfortably. */
+  .testimonial-card {
+    min-width: 100%; /* Ensure it takes full width of container */
+  }
+}

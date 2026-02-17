@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Social Media Handling (Organic)",
+        "icon": "BsMegaphone"
+    },
+    {
+        "id": 2,
+        "title": "Web Development",
+        "icon": "FaCode"
+    },
+    {
+        "id": 3,
+        "title": "SEO Optimization",
+        "icon": "FaSearch"
+    },
+    {
+        "id": 4,
+        "title": "Graphic Design",
+        "icon": "FaPaintBrush"
+    },
+    {
+        "id": 5,
+        "title": "Content Marketing",
+        "icon": "FaPenNib"
+    },
+    {
+        "id": 6,
+        "title": "Brand Strategy",
+        "icon": "FaLightbulb"
+    }
+]

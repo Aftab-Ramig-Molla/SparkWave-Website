@@ -1,0 +1,412 @@
+/* --- Animation Keyframes --- */
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLinks {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* --- Header Animation --- */
+header {
+  height: 10rem;
+  position: fixed;
+  z-index: 19;
+  background: linear-gradient(90deg, #141E30, #243B55);
+  width: 100%;
+  animation: fadeSlideDown 0.8s ease-out;  /* 👈 added animation */
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ---------- Dropdown Container ---------- */
+.navbar-grid ul li.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+
+
+/* ---------- Dropdown Menu Styling ---------- */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: white;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  min-width: 220px;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.35s ease;
+
+  z-index: 999;
+}
+
+/* ---------- Show dropdown on hover ---------- */
+.dropdown:hover .dropdown-menu,
+.dropdown.open .dropdown-menu { 
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ---------- Dropdown Items ---------- */
+.dropdown-menu li {
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 12px 16px;
+  color: black;
+  font-size: 12px;
+  transition: 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background: #f5f5f5;
+  padding-left: 20px;
+}
+
+
+
+
+
+.navbar-grid {
+  
+  grid-template-columns: 0.5fr 1fr;
+  align-items: center;
+  height: 10rem;
+  padding: 0 3.2rem;
+  width: 100%;
+}
+
+
+nav ul{
+  display: flex;
+  justify-content: flex-end;
+  gap: 3.2rem;
+  color: #fff;
+
+  & li a{
+    color: #fff;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%; /* Matches parent (like navbar) */
+  justify-content: flex-start; /* Align left */
+  padding-left: 1rem; /* Small padding for spacing */
+}
+
+.logo img {
+  height: 80px;
+  width: 150px;
+  max-width: 200px;
+  /* max-height: 10rem; */
+  object-fit: contain;
+  opacity: 0;
+  animation: fadeSlideDown 1s ease forwards;
+  animation-delay: 0.2s; /* small delay */
+}
+
+.ham-menu {
+    display: none;
+    text-align: end;
+}
+
+
+/* --- Nav Links Animation --- */
+nav ul li {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInLinks 0.6s ease forwards;
+}
+
+/* Delay each link slightly for a cascading effect */
+nav ul li:nth-child(1) { animation-delay: 0.3s; }
+nav ul li:nth-child(2) { animation-delay: 0.4s; }
+nav ul li:nth-child(3) { animation-delay: 0.5s; }
+nav ul li:nth-child(4) { animation-delay: 0.6s; }
+nav ul li:nth-child(5) { animation-delay: 0.7s; }
+nav ul li:nth-child(6) { animation-delay: 0.8s; }
+nav ul li:nth-child(7) { animation-delay: 0.9s; }
+
+/* --- Hover Effects for Links --- */
+nav ul li a {
+  color: #fff;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: #00E0FF;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #00E0FF;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* --- Mobile Menu Animation --- */
+.menu-mobile {
+  position: absolute;
+  top: 10rem;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px;
+  animation: fadeSlideDown 0.5s ease;
+}
+
+
+/* media queries */
+@media screen and (max-width: 998px){
+  .logo {
+    justify-content: center; /* Optional: center on smaller screens */
+    padding-left: 0; /* Remove left padding */
+  }
+
+  .logo img {
+    width: 175px;      /* Reduce width */
+    height: auto;      /* Keep aspect ratio */
+    max-width: 200px;  /* Prevent overflow */
+  }
+
+    .ham-menu{
+      display: inline-block;
+      justify-self: end;
+
+    }
+    .ham-menu button {
+    /* ESSENTIAL: Removes the default, ugly button appearance */
+    background: none;
+    border: none;
+    padding: 0.5rem; /* Provides a larger clickable area around the icon */
+    cursor: pointer;
+    line-height: 0; /* Prevents extra spacing/alignment issues with the icon */
+    
+    /* Optional: Ensure the button doesn't take up full width inside .ham-menu */
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-out; /* Subtle animation for clicking */
+}
+
+/* --- 3. Icon Styling (GiHamburgerMenu) --- */
+/* Target the icon directly or via its class/element if necessary. 
+   Assuming the icon inherits color from the button/container. */
+.ham-menu button svg {
+    /* Adjust size for easy tapping on mobile */
+    font-size: 2.5rem; 
+    /* Color should be white/light for the dark navbar background */
+    color: #ffffff; 
+    transition: color 0.2s ease;
+}
+
+/* --- 4. Hover/Interaction States (Visual Feedback) --- */
+.ham-menu button:hover svg {
+    /* Use the bright accent color for visual feedback */
+    color: #00E0FF; 
+}
+
+
+    .menu-web{
+      display: none;
+    }
+    .menu-mobile {
+      height: auto;
+      max-height: 100vh;
+      
+      overflow-y: auto; /* When content grows, scrolling works */
+      transition: max-height 0.3s ease-in-out;
+      position: absolute;
+      top: 10rem;
+      left: 0;
+      background-color: #f2f2f2;
+      width: 100%;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px;
+    }
+    .menu-mobile ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+
+    & li:first-child {
+        margin-top: 1.2rem;
+    }
+    & li:last-child {
+        margin-bottom: 1.2rem;
+    }
+    .menu-mobile ul {
+      background-color: #f2f2f2;
+    }
+
+    .menu-mobile ul li a {
+    color: #000; /* override link color for mobile menu */
+    
+  }
+
+  .menu-mobile ul li a:hover {
+    color: #2e86c1; /* optional hover color */
+  }
+
+
+
+
+
+
+/* 1. Make all mobile list items fill the width for consistent clicks */
+
+.menu-mobile ul li {
+  width: 100%;
+  text-align: center;
+}
+
+/* 2. Style the "Services" toggle item (the <li>) */
+.menu-mobile li.dropdown {
+  /* Remove any default padding that might be on the <li> */
+  padding: 0;
+  
+  /* This ensures the sub-menu items don't have extra margins */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 3. Style the clickable "Services" text and icon */
+.menu-mobile .dropdown .services-toggle {
+  display: flex;
+  justify-content: center; /* Aligns text/icon to the center */
+  align-items: center;
+  
+  width: 100%;  /* Make the entire row clickable */
+  
+  /* Make it look like the other <a> links */
+  padding-left: 1.6rem ; /* Adjust padding to match your other links */
+  color: #000;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-mobile .dropdown .services-toggle:hover {
+  color: #2e86c1; /* Match your existing link hover color */
+}
+
+
+/* 4. Handle the Arrow Icon rotation */
+.menu-mobile .dropdown .services-toggle svg {
+  font-size: 1.1em; /* Make icon clearly visible */
+  transition: transform 0.3s ease-out;
+  padding-bottom: 0.4rem;
+}
+
+/* 5. THIS IS THE KEY: Rotate the icon when the menu is open */
+.menu-mobile .dropdown.open .services-toggle svg {
+  transform: rotate(180deg);
+}
+
+
+/* 6. Reset the desktop dropdown styles for mobile */
+.menu-mobile .dropdown-menu {
+  position: static; /* Overrides 'absolute' from desktop */
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  box-shadow: none;
+  min-width: unset;
+  width: 100%;
+  border-radius: 0;
+  
+  /* --- This creates the slide-down animation --- */
+  max-height: 0; /* This hides the menu */
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+  /* ----------------------------------------------- */
+  
+  /* Style the sub-menu container */
+  padding: 0;
+  margin: 0;
+  background-color: #f9f9f9; /* Lighter bg to show it's a sub-menu */
+}
+
+/* 7. THIS IS THE KEY: Show the menu when .open class is added */
+.menu-mobile .dropdown.open .dropdown-menu {
+  max-height: 600px; /* Set to a large value to allow all items to show */
+}
+
+/* 8. Style the sub-menu links */
+.menu-mobile .dropdown-menu li {
+  border-bottom: none; /* Remove desktop border */
+  width: 100%;
+  height: auto;
+}
+
+.menu-mobile .dropdown-menu li a {
+  padding: 1rem 1.5rem;
+  font-size: 14px; /* Slightly smaller than main links */
+  color: #333;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.menu-mobile .dropdown-menu li a:hover {
+  background-color: #eee;
+  padding-left: 1.5rem; /* Stop the desktop 'padding-left: 20px' effect */
+
+}
+
+}
+
+@media (max-width: 600px) {
+  .logo img {
+    width: 130px;
+    max-width: 150px;
+  }
+}

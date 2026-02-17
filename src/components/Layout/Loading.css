@@ -1,0 +1,96 @@
+    /* loading.css */
+    .loadingContainer {
+    position: fixed;
+    inset: 0; /* top-0 right-0 bottom-0 left-0 */
+    background: #000; /* Pure black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 9999;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .loadingLogo {
+    width: 180px;        /* Adjust size as needed */
+    height: auto;
+    animation: gentlePulse 2.2s ease-in-out infinite;
+    }
+
+    .loadingContainer p {
+    margin: 0;
+    color: aliceblue;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    animation: fade 2.2s ease-in-out infinite;
+    }
+
+    /* Very subtle breathing/pulse effect – looks premium & calm */
+    @keyframes gentlePulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+    }
+
+    @keyframes fade {
+    0%, 100% { opacity: 0.6; }
+    50%      { opacity: 0.9; }
+    }
+
+    /* Optional: Smooth fade-out when loading finishes */
+    .loadingContainer.fade-out {
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+    }
+
+
+
+
+    /* ===================================
+   SAFARI FONT FIX — LOADING SCREEN
+   Chrome remains untouched
+=================================== */
+@supports (-webkit-touch-callout: none) {
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .loadingContainer p {
+    font-weight: 500;        /* Safari-safe */
+    letter-spacing: 0.6px;  /* reduce thinning */
+    opacity: 0.9;           /* better contrast */
+  }
+}
+/* ===================================
+   SAFARI FONT FIX — LOADING SCREEN
+   Chrome remains untouched
+=================================== */
+@supports (-webkit-touch-callout: none) {
+
+   body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .loadingContainer p {
+    font-weight: 500;        /* Safari-safe */
+    letter-spacing: 0.6px;  /* reduce thinning */
+    opacity: 0.9;           /* better contrast */
+  }
+}
+
+
+@supports (-webkit-touch-callout: none) {
+    body { font-weight: 500; }
+}

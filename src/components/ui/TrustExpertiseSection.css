@@ -1,0 +1,455 @@
+    /* --- Imports for a nice font --- */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap');
+
+    /* Safari-only fix for light Poppins font */
+@supports (-webkit-touch-callout: none) {
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Paragraphs */
+  p {
+    font-weight: 600;
+  }
+
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 800;
+  }
+
+  /* Numbers / highlights */
+  .count,
+  .highlight {
+    font-weight: 800;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  h1,
+  h2 {
+    letter-spacing: -0.02em;
+  }
+}
+
+
+    /* --- General Section Styling --- */
+    .trustexpertisesection {
+    font-family: 'Poppins', sans-serif;
+    padding: 6rem 0;
+    background-color: #f9f9f9; /* Slightly off-white background to see cards */
+    overflow: hidden; 
+    }
+
+    .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    }
+
+    /* --- Main Layout (Left/Right) --- */
+    .trustexpertwrapper {
+    display: flex;
+    align-items: stretch; /* Make columns equal height */
+    gap: 3.5rem;
+    }
+
+    /* --- MODIFICATION: Added border, shadow, padding, and background --- */
+    .trustexpertiseleft {
+    flex-basis: 50%;
+    display: flex;
+    
+    flex-direction: column;
+    gap: 2.5rem;
+    /* Card styles */
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid #e9e9e9;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    
+    /* --- PAGE LOAD ANIMATION (Left Side) --- */
+    animation: slideInLeft 1s ease-out forwards;
+    }
+
+    /* --- MODIFICATION: Added border, shadow, padding, and background --- */
+    .trustexpertiseright {
+        position: relative;
+        padding: 40px 0;
+        overflow: hidden;
+        background: linear-gradient(to right, #f8fbff, #eaf6ff);
+        box-shadow: inset 0 0 40px rgba(135, 206, 250, 0.2);
+        width: 700px;
+    /* --- PAGE LOAD ANIMATION (Right Side) --- */
+    animation: fadeIn 1s ease-out 0.5s forwards;
+    opacity: 0; /* Start hidden for animation */
+    
+    /* This creates the fading effect on the edges */
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+    overflow: hidden; /* This is CRITICAL for the marquee effect */
+    }
+
+    /* --- Left Side Content: Text --- */
+    /* --- MODIFICATION: Increased font size --- */
+    .trustexpertisepara h1 {
+    font-size: 3.5rem; /* Increased from 2.75rem */
+    font-weight: 700;
+    color: #1a1a2e;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    /* --- PAGE LOAD ANIMATION (Staggered) --- */
+    animation: slideInUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+    }
+    .trustexpertiseright h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #1e3a8a;
+    font-weight: 700;
+    }
+    /* --- MODIFICATION: Increased font size --- */
+    .trustexpertisepara p {
+    font-size: 1.4rem; /* Increased from 1.1rem */
+    color: #555;
+    
+    /* --- PAGE LOAD ANIMATION (Staggered) --- */
+    animation: slideInUp 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+    }
+
+    /* --- Left Side Content: Stats --- */
+    .trustexpertisenumbers {
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+    }
+
+    .trustexpertiselogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    
+    /* --- PAGE LOAD ANIMATION (Staggered Children) --- */
+    animation: popIn 0.7s ease-out forwards;
+    opacity: 0; 
+    transform: scale(0.8); 
+    }
+
+    /* Staggering the animation for each stat block */
+    .trustexpertiselogo:nth-child(1) { animation-delay: 0.6s; }
+    .trustexpertiselogo:nth-child(2) { animation-delay: 0.8s; }
+    .trustexpertiselogo:nth-child(3) { animation-delay: 1.0s; }
+    .trustexpertiselogo:nth-child(4) { animation-delay: 1.2s; }
+
+
+    .trustexpertiseicon {
+    background-color: #e6f3ff;
+    border-radius: 50%;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .trustexpertiseicon img {
+    width: 36px;
+    height: 36px;
+    }
+    /* Fade & Slide-up animation */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+    }
+
+    .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+    }
+
+    .count {
+    color: #0077ff;
+    font-weight: 700;
+    }
+
+
+    /* --- MODIFICATION: Increased font size --- */
+    .trustexpertisenobold h1 {
+    font-size: 4.1rem; /* Increased from 2.25rem */
+    font-weight: 900;
+    color: #007bff;
+    margin: 0;
+    line-height: 1.1;
+    }
+
+    /* --- MODIFICATION: Increased font size --- */
+    .trustexpertisenobold p {
+    font-size: 1.2rem; /* Increased from 0.9rem */
+    color: #333;
+    margin: 0;
+    }
+
+    /* --- Right Side: Infinite Logo Scroller --- */
+
+    /* --- NEW: Styling for your H2 --- */
+    .trustexpertiseright{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 5.5rem;
+        gap: 1.5rem;
+        position: relative;
+        padding: 40px 0;
+        overflow: hidden;
+        background: linear-gradient(to right, #f8fbff, #eaf6ff);
+        box-shadow: inset 0 0 40px rgba(135, 206, 250, 0.2);
+    }
+    .trustexpertiseright h2 {
+    font-size: 3.25rem;
+    font-weight: 900;
+    color: #1a1a2e;
+    text-align: center;
+    margin-bottom: 2rem;
+    
+    /* --- PAGE LOAD ANIMATION (Staggered) --- */
+    animation: slideInUp 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+    }
+
+    .partner-scroll {
+    display: flex;
+    width: max-content; 
+    
+    /* --- MODIFICATION: Increased speed (60s -> 40s) --- */
+    gap: 40px;
+    animation: scrollClients 55s linear infinite;
+    }
+
+    /* Pauses the scroll when a user hovers over it */
+    .partner-scroll:hover {
+    animation-play-state: paused;
+    }
+
+    .partner-logo {
+    flex: 0 0 auto;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    }
+    .partner-img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(135, 206, 250, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+ 
+
+    /* --- MODIFICATION: Bigger logos, no grayscale --- */
+    .partner-logo img {
+    /* height: 100px;
+    max-width: 170px; */
+    border-radius: 5px;
+    opacity: 0.8; /* Still good for balance */
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+    /* --- MODIFICATION: Increased scale, no grayscale toggle --- */
+    .partner-logo:hover .partner-img {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(30, 144, 255, 0.6);
+}
+
+
+    
+.partner-info {
+  margin-top: 12px;
+  color: #0a2540;
+}
+
+.partner-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #004aad;
+}
+
+.partner-followers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6px;
+  font-size: 1.3rem;
+  color: #1d4ed8;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.partner-followers svg {
+  color: #e1306c;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.partner-logo:hover .partner-followers svg {
+  transform: scale(1.2);
+  color: #ff2e7e;
+}
+
+.highlight {
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+@keyframes scrollClients {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Side glowing effect */
+.trustexpertiseright::before,
+.trustexpertiseright::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.trustexpertiseright::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(173, 216, 230, 0.6), transparent);
+}
+
+.trustexpertiseright::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(173, 216, 230, 0.6), transparent);
+}
+    /* ---
+    Keyframes for Animations (Unchanged)
+    --- */
+
+    @keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+    }
+
+    @keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    }
+
+    @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    }
+
+    @keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    @keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+    }
+
+
+    /* --- Responsive Design (Mobile) --- */
+    @media (max-width: 992px) {
+    .trustexpertwrapper {
+        flex-direction: column; /* Stack left/right columns */
+    }
+    
+    .trustexpertiseleft,
+    .trustexpertiseright {
+        flex-basis: 100%;
+        width: 100%;
+    }
+    
+    .trustexpertiseright {
+        margin-top: 3rem;
+    }
+    
+    /* --- MODIFICATION: Responsive font size --- */
+    .trustexpertisepara h1 {
+        font-size: 2.5rem;
+    }
+
+    .trustexpertiseright h2 {
+        font-size: 2rem;
+    }
+    }
+
+    @media (max-width: 576px) {
+    .trustexpertisenumbers {
+        grid-template-columns: 1fr; /* Stack stats on top of each other */
+    }
+
+    /* --- MODIFICATION: Responsive font size --- */
+    .trustexpertisepara h1 {
+        font-size: 2.2rem;
+    }
+    
+    /* --- MODIFICATION: Reduce padding on mobile cards --- */
+    .trustexpertiseleft,
+    .trustexpertiseright {
+        padding: 1.5rem;
+    }
+    }

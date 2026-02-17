@@ -1,0 +1,374 @@
+.aboutcompanysection {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the section takes up enough space */
+    background-image: url('../../assets/background_img2.png'); /* adjust path as needed */
+    background-size: cover;       /* makes it cover entire section */
+    background-position: center;  /* centers the image */
+    background-repeat: no-repeat; /* prevents repeating */
+    /* spacing for content */
+    text-align: center;
+    overflow: hidden;
+}
+
+    .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    gap: 4rem;
+    }
+
+    .grid-two-cols {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    /* LEFT SIDE */
+    .aboutcompanyleft {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    animation: fadeInLeft 1.2s ease forwards;
+    opacity: 0;
+    }
+
+    .aboutcompanysparkwave-btn {
+        font-family: 'Poppins', sans-serif;
+        width: 250px;
+        font-weight: 600;
+        color: #ffffff;
+        background: linear-gradient(90deg, #00E0FF, #007BFF);
+        border: none;
+        border-radius: 10px;
+        padding: 12px 36px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 12px rgba(0, 224, 255, 0.4);
+        letter-spacing: 1px;
+        font-size: 1.4rem !important;
+    }
+    .aboutcompanyheading{
+        text-align: left;
+    }
+
+    .aboutcompanyheading h2 {
+        font-size: 3.9rem;
+        font-weight: 600;
+        color: #1f2937;
+        line-height: 1.3;
+        font-weight: 700;
+        position: relative;
+    }
+
+    .aboutcompanyheading h2 span{
+        background: #007BFF;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .aboutcompanyheading h2::after {
+        content: '';
+        width: 0px;
+        height: 4px;
+        background: linear-gradient(90deg, #181be4, #616fe8);
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        border-radius: 2px;
+        transition: width 0.3s ease-in-out;
+    }
+    .aboutcompanyheading h2:hover::after {
+    /* Set the final width on hover */
+    width: 80px; 
+}
+    .aboutcompanypara{
+        text-align: left;
+        height: 16rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .aboutcompanypara p {
+        color: #4b5563;
+        line-height: 1.8;
+        font-size: 1.32rem;
+    }
+
+    /* LOGO TEXT (EXPERIENCE/SUPPORT) */
+ /* 1. Base Styling for the Container */
+.aboutcompanylogo {
+    /* Optional: Use flex to center or space the items nicely */
+    display: flex;
+    gap: 20px; /* Space between the two badges */
+    justify-content: flex-start;
+    position: relative;
+    top: -50px;
+}
+
+/* 2. Styling for the Individual Badges (H3) */
+.aboutcompanylogo h3 {
+    /* Button/Badge appearance */
+    background: #f7f7f7; /* Light background for the badge */
+    color: #333; /* Dark text */
+    padding: 12px 25px;
+    border-radius: 50px; /* Highly rounded corners for a modern "pill" look */
+    border: 1px solid #ddd; /* Subtle border */
+    font-size: 1.3rem;
+    font-weight: 700;
+    
+    /* Animation setup */
+    position: relative;
+    overflow: hidden; /* Important for the glow effect */
+    transition: all 0.3s ease; /* Smooth hover transition */
+    
+    /* Initial state for the animation */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle lift */
+}
+
+/* Style the Icons (FaRegThumbsUp, FaHeadset) */
+.aboutcompanylogo h3 svg {
+    margin-right: 8px;
+    color: #3436a3; /* Use your main accent color */
+    font-size: 1.25em; 
+}
+
+/* 3. Hover Effect (Optional but Recommended) */
+.aboutcompanylogo h3:hover {
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.2); /* Enhanced shadow on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* 4. The Continuous Pulse/Motion Animation */
+
+/* Define the keyframes for the pulse */
+@keyframes continuousPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+    }
+    50% {
+        transform: scale(1.02); /* Slight growth */
+        box-shadow: 0 0 0 8px rgba(99, 102, 241, 0); /* Ring expands and fades */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+    }
+}
+
+/* Apply the animation */
+.aboutcompanylogo h3 {
+    /* The animation runs continuously (infinite) and alternates between 0% and 100% */
+    animation: continuousPulse 2s ease-in-out infinite;
+}
+
+/* Optional: Offset the second item's animation for a more dynamic look */
+.aboutcompanylogo h3:nth-child(2) {
+    animation-delay: 0.5s; 
+}
+    /* CONTACT SECTION */
+    .aboutcompanycontact {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    margin-top: 2.2rem;
+    position: relative;
+    top: -50px;
+    }
+
+    .aboutcompanycontact button {
+    background: linear-gradient(90deg, #00E0FF, #007BFF);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 40px;
+    width: 150px;
+    }
+
+    .aboutcompanycontact button:hover {
+    background: linear-gradient(90deg, #6366f1, #4338ca);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+    }
+
+    /* CALL ICON AREA */
+    .aboutcompanycallicon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    animation: pulse 3s infinite;
+    }
+
+    .callicon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(90deg, #00E0FF, #007BFF);
+    border-radius: 50%;
+    position: relative;
+    }
+
+    .callicon::before {
+    content: "📞";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: white;
+    }
+
+    .aboutcompanycallicon span {
+    font-size: 1.2rem;
+    color: #6b7280;
+    font-weight: 600;
+    }
+    .aboutcompanycallicon p{
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .aboutcompanycallicon h2 {
+    font-size: 1.3rem;
+    color: #4338ca;
+    font-weight: 700;
+    }
+
+    /* RIGHT SIDE */
+    .aboutcompanyright {
+    text-align: center;
+    animation: fadeInRight 1.2s ease forwards;
+    opacity: 0;
+    padding: 10px;
+    }
+
+    .aboutcompanyimg img {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.2);
+    transform: scale(0.95);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .aboutcompanyimg img:hover {
+    transform: scale(1);
+    /* box-shadow: 0 10px 35px rgba(79, 70, 229, 0.3); */
+    transform: perspective(1000px) rotateY(3deg) scale(1.02);
+    /* More pronounced shadow on hover for a 3D pop effect */
+    box-shadow: 0 20px 50px rgba(74, 144, 226, 0.4); /* Shadow with Primary Blue tint */
+    }
+
+    /* Animations */
+    @keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    }
+
+    @keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    }
+
+    @keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(99, 102, 241, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+    }
+    }
+
+
+
+    /* iOS-only typography correction */
+@supports (-webkit-touch-callout: none) {
+
+    .aboutcompanyheading h2 {
+        font-weight: 700;
+    }
+
+    .aboutcompanylogo h3 {
+        font-weight: 700;
+    }
+
+    .aboutcompanypara p {
+        font-weight: 500;
+    }
+
+    .aboutcompanycallicon p,
+    .aboutcompanycallicon h2 {
+        font-weight: 700;
+    }
+}
+
+/* --- RESPONSIVE DESIGN (Optional but recommended) --- */
+
+@media (max-width: 992px) {
+    .grid-two-cols {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+    
+    .aboutcompanyleft {
+        padding-right: 1;
+        width: 80%;
+        margin: auto;
+        padding-top:2rem ;
+    }
+
+    .aboutcompanyheading h2 {
+        font-size: 36px;
+    }
+    
+    .aboutcompanyright {
+        order: 2; /* Place the image above the text on mobile */
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .aboutcompanycontact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .aboutcompanylogo {
+        gap: 15px;
+        padding-top: 4.5rem;
+        margin-top: 150px;
+    }
+    /* .aboutcompanylogo {
+        width: 25rem;
+        height: 15rem;
+    } */
+}

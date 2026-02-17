@@ -1,0 +1,371 @@
+/* Define some variables for consistent theming */
+:root {
+    --gallery-bg: #f8f9fa;
+    --accent-color: #f03e3e; /* A nice pop of color for birthdays/parties */
+    --overlay-dark: rgba(0, 0, 0, 0.85);
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gallerySection {
+    padding: 4rem 2rem;
+    background-color: var(--gallery-bg);
+    min-height: 100vh;
+    
+}
+
+.Galleryheader {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    z-index: 1;
+    /* 🌈 Gradient text color */
+    background: linear-gradient(90deg, #007bff, #00d4ff, #ff6ec7);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorShift 5s linear infinite;
+
+    /* 🌫️ Blurred translucent background */
+    display: inline-block;
+    padding: 12px 35px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    
+
+/* Optional subtle gradient animation for movement */
+    @keyframes colorShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+    }
+.subtitle {
+    font-size: 1.8rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* --- Thumbnails Grid --- */
+.grid {
+    display: grid;
+    /* Responsive columns: will create as many columns as fit, min 300px wide */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.thumbnailItem {
+    cursor: pointer;
+    /* Force standardized square aspect ratio for neat grid */
+    aspect-ratio: 1 / 1; 
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: var(--transition-smooth);
+}
+
+.thumbnailItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images cover the square area without stretching */
+    transition: transform 0.6s ease;
+}
+
+/* Zoom effect on hover */
+.thumbnailItem:hover .imageWrapper img {
+    transform: scale(1.08);
+}
+
+/* Dark overlay on hover with text */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.overlay span {
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 2px solid white;
+    padding: 0.5rem 1rem;
+    transform: translateY(20px);
+    transition: var(--transition-smooth);
+}
+
+.thumbnailItem:hover .overlay {
+    opacity: 1;
+}
+
+.thumbnailItem:hover .overlay span {
+    transform: translateY(0);
+}
+
+/* --- Lightbox (Modal) --- */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background-color: var(--overlay-dark);
+    /* Modern blurring effect on background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightboxContent {
+    position: relative;
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* The large image in the lightbox */
+.activeImage {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    opacity: 0;
+    transform: scale(0.96);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Class added via JS once image loads for smooth fade-in */
+.activeImage.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.imageCaption {
+    color: #fff;
+    margin-top: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* --- Controls (Arrows and Close) --- */
+/* --- Shared Button Styles --- */
+.gallerySection .navBtn, .closeBtn {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1); /* Glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  z-index: 1010;
+  padding: 0; /* Important for centering CSS shapes */
+}
+
+/* Hover Effects */
+.gallerySection .navBtn:hover, .closeBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- 1. Navigation Arrows (Shapes) --- */
+ .gallerySection .navBtn {
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  width: 56px;
+  height: 56px;
+}
+
+/* This creates the arrow shape */
+.gallerySection .navBtn::after {
+  content: '';
+  display: block;
+  width: 14px;  
+  height: 14px; 
+  border-top: 3px solid white;  
+  border-right: 3px solid white; 
+  transition: border-color 0.3s ease;
+}
+
+/* Right Arrow > */
+.gallerySection .navRight {
+  right: 24px;
+}
+.gallerySection .navRight::after {
+  transform: rotate(45deg); /* Points Right */
+  margin-right: 4px; /* Optical centering */
+}
+
+/* Left Arrow < */
+.gallerySection .navLeft {
+  left: 24px;
+}
+.gallerySection .navLeft::after {
+  transform: rotate(-135deg); /* Points Left */
+  margin-left: 4px; /* Optical centering */
+}
+
+
+/* --- 2. Close Button (X Shape) --- */
+.gallerySection .closeBtn {
+    background-color: red;
+    color: #f8f9fa;
+    top: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+}
+
+/* Create the X using two crossing lines */
+.gallerySection .closeBtn::before,
+.gallerySection .closeBtn::after {
+  content: '';
+  position: absolute;
+  width: 20px; 
+  height: 3px; 
+  background-color: white;
+  border-radius: 2px;
+}
+
+.gallerySection .closeBtn::before {
+  transform: rotate(45deg);
+}
+
+.gallerySection .closeBtn::after {
+  transform: rotate(-45deg);
+}
+
+/* Mobile Adjustments */
+.loadMoreBtn {
+    display: none; /* hidden on desktop */
+}
+@media (max-width: 768px) {
+    .loadMoreBtn {
+        display: block;
+        margin: 2rem auto;
+        padding: 12px 25px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: white;
+        background: linear-gradient(135deg, #007bff, #00c6ff);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        transition: 0.3s ease;
+    }
+
+    .loadMoreBtn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    .gallerySection.navBtn {
+    width: 44px;
+    height: 44px;
+    }
+    .gallerySection.navLeft { left: 10px; }
+    .gallerySection.navRight { right: 10px; }
+    .gallerySection.closeBtn { top: 15px; right: 15px; }
+    .thumbnailItem {
+        aspect-ratio: auto;
+         height: 250px; /* fixed height for consistency */
+    }
+}
+
+
+/* ===================================
+    SAFARI FONT FIX — GALLERY PAGE
+    Chrome remains untouched
+    =================================== */
+    @supports (-webkit-touch-callout: none) {
+
+    body {
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+
+    /* ===== MAIN GALLERY TITLE ===== */
+    .title {
+        font-weight: 900;
+        -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.25);
+        letter-spacing: 1px;
+    }
+
+    /* ===== SUBTITLE ===== */
+    .subtitle {
+        font-weight: 600;
+    }
+
+    /* ===== OVERLAY TEXT ===== */
+    .overlay span {
+        font-weight: 700;
+    }
+
+    /* ===== IMAGE CAPTION ===== */
+    .imageCaption {
+        font-weight: 500;
+    }
+
+    /* ===== LOAD MORE BUTTON ===== */
+    .loadMoreBtn {
+        font-weight: 700;
+    }
+    }
+
+
+    @supports (-webkit-touch-callout: none) {
+    .subtitle,
+    .imageCaption {
+        letter-spacing: -0.01em;
+    }
+    }

@@ -1,0 +1,320 @@
+    /* --- GrowthSection.css --- */
+
+    /* 1. SECTION BACKGROUND AND HEADER LAYOUT */
+    .Growth-Section{
+        padding-top: 5rem;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 80vh; /* Ensure the section takes up enough space */
+        background-image: url('../../assets/background_img2.png'); /* adjust path as needed */
+        background-size: cover;       /* makes it cover entire section */
+        background-position: center;  /* centers the image */
+        background-repeat: no-repeat; /* prevents repeating */
+        /* optional: gives a parallax feel */
+        /* spacing for content */
+        text-align: center;
+        overflow: hidden;
+    }
+    .Growth-Section-inner{
+        padding-top: 25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* Adjust margin to be dynamic/removed, as fixed margins can interfere with scroll on smaller screens */
+        /* margin-right: 10rem; -> Removed or reduced for better scroll layout */
+        margin: 0 5rem; /* Centered with some side margin */
+        
+        /* === KEY CHANGES FOR SCROLLING === */
+        height: 100%; /* Take up available space */
+        flex-grow: 1; /* Allow it to take up remaining vertical space */
+        overflow-y: auto; /* Enable vertical scrolling when content exceeds height */
+        padding-bottom: 2rem; /* Add padding to the bottom of the scrollable area */
+        
+        width: 80%;
+    }
+
+    /* 🌈 Custom Scrollbar Styling (WebKit browsers: Chrome, Edge, Safari) */
+    .Growth-Section-inner::-webkit-scrollbar {
+    width: 10px; /* scrollbar width */
+    }
+
+    .Growth-Section-inner::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* track color */
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    }
+
+    .Growth-Section-inner::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #007bff, #00d4ff, #ff6ec7); /* gradient scroll thumb */
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    }
+
+    .Growth-Section-inner::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00d4ff, #ff6ec7, #007bff); /* hover animation */
+    }
+
+    /* 🦋 Optional: Firefox scrollbar support */
+    .Growth-Section-inner {
+        scrollbar-width: thin;
+        scrollbar-color: #00d4ff rgba(255, 255, 255, 0.1);
+    }
+
+    .growth-heading h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 60px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 1;
+
+    /* 🌈 Gradient text color */
+    background: linear-gradient(90deg, #007bff, #00d4ff, #ff6ec7);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorShift 5s linear infinite;
+
+    /* 🌫️ Blurred translucent background */
+    display: inline-block;
+    padding: 12px 35px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Optional subtle gradient animation for movement */
+    @keyframes colorShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+    }
+
+    /* Container for the cards */
+    .Growth-Section .container {
+        /* Reset existing 'flex' class and set up a responsive grid */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+        gap: 30px;
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    /* .Growth-Section .container .growth-heading {
+        display: flex;
+        flex-direction: col;
+    } */
+
+    /* 2. CARD DESIGN (Growth-Content) */
+    .Growth-Content {
+        background-color: #ffffff; /* Default white background for card */
+        padding: 30px;
+        border-radius: 12px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 30rem;
+        height: 20rem;
+        /* Default box shadow for depth */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+        
+        /* Animation setup */
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border: 1px solid #e0f7ff; /* Subtle border */
+        overflow: hidden; /* Important for background gradient */
+        position: relative;
+        z-index: 1; /* Ensure content is above the pseudo-element */
+    }
+
+    /* Pseudo-element for the gradient background effect on hover */
+    .Growth-Content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        /* Initial state: fully transparent */
+        background: linear-gradient(135deg, #00e0ff, #0066ff);
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+        z-index: -1; /* Place behind the content */
+    }
+
+    /* 3. HOVER ANIMATION */
+    .Growth-Content:hover {
+        transform: translateY(-10px); /* Lift the card */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .Growth-Content:hover::before {
+        opacity: 1; /* Make the gradient background visible on hover */
+    }
+
+    /* Change text color on hover for contrast */
+    .Growth-Content:hover .Growth-Content-text h3,
+    .Growth-Content:hover .Growth-Content-text p,
+    .Growth-Content:hover .icon {
+        color: #ffffff !important;
+    }
+
+
+    /* 4. CONTENT STYLING (Icon and Text) */
+    .Growth-Content .icon {
+        /* Style the icon container */
+        font-size: 3rem;
+        color: #0066ff; /* Blue primary color */
+        margin-bottom: 1rem;
+        /* transition is needed for color change on hover */
+        transition: color 0.4s ease-in-out; 
+        line-height: 1;
+    }
+
+    @keyframes iconSpin {
+        0% {
+            transform: rotate(0deg) scale(1);
+        }
+        99.99% { /* Almost the end */
+            transform: rotate(360deg) scale(1.3); 
+        }
+        100% { /* The end state */
+            transform: rotate(360deg) scale(1.3); 
+        }
+    }
+    /* 2. Apply initial transition to the icon */
+    .Growth-Content .icon {
+        /* Existing Styles (ensure transition is included) */
+        font-size: 3rem;
+        color: #0066ff;
+        margin-bottom: 1rem;
+        line-height: 1;
+        /* --- ENHANCEMENT: Add smooth transition for transform --- */
+        transition: color 0.4s ease-in-out, transform 0.4s ease-in-out; 
+    }
+
+    /* 3. Icon Animation on Card Hover */
+    .Growth-Content:hover .icon {
+        /* This overrides the hover color set previously, applying a white color for contrast */
+        color: #ffffff !important; 
+        
+        /* === KEY ANIMATION STYLES === */
+        
+        /* A. Apply the animation when the card is hovered */
+        animation: iconSpin 0.8s ease-out forwards; 
+        
+        /* B. Aesthetic Glow Effect (optional but highly recommended) */
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.8), /* Soft inner glow */
+            0 0 10px rgba(0, 224, 255, 0.7), /* Blue outer glow */
+            0 0 20px rgba(0, 102, 255, 0.5); /* Stronger blue glow */
+            
+        /* C. Scale down slightly after the spin completes (optional) */
+        
+    }
+
+    /* 4. Reset Animation After Hover (to ensure it doesn't spin perpetually) */
+    /* When the mouse leaves the card, the icon returns to its original state */
+    .Growth-Content .icon {
+        animation: none; /* Reset animation state */
+        transform: none; /* Reset transform (if scale was applied) */
+        text-shadow: none; /* Remove glow */
+    }
+    .Growth-Content-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .Growth-Content-text h3 {
+        font-size: 1.6rem;
+        font-weight: 650;
+        color: #0d1a49;
+        margin-bottom: 0.8rem;
+        transition: color 0.4s ease-in-out;
+    }
+
+    .Growth-Content-text p {
+        font-size: 1.1rem;
+        color: #181515;
+        line-height: 1.6;
+        transition: color 0.4s ease-in-out;
+    }
+
+/* iOS-only font rendering correction */
+@supports (-webkit-touch-callout: none) {
+    .growth-heading h1 {
+        font-weight: 700;
+    }
+
+    .Growth-Content-text h3 {
+        font-weight: 700;
+    }
+
+    .Growth-Content-text p {
+        font-weight: 500;
+    }
+}
+
+    /* 5. RESPONSIVENESS */
+
+    /* Tablet/Medium Screens (2 columns) */
+    @media screen and (max-width: 1024px) {
+        .Growth-Section{
+            margin-top: -40px;
+            height: auto;
+        }
+        .Growth-Section-inner {
+            overflow: hidden;
+            width: 100%;
+            margin-top: -20rem;
+            
+        }
+        .Growth-Section .container {
+            grid-template-columns: repeat(2, 1fr); 
+        }
+        .Growth-Content{
+            width: 98%;
+            
+        }
+        .Growth-Section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            width: 80%;
+        }
+    }
+
+    /* Mobile/Small Screens (1 column stacking) */
+    @media screen and (max-width: 600px) {
+        .Growth-Section .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .Growth-Section h1 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .Growth-Content {
+            padding: 25px;
+        }
+    }
+
+
+    
