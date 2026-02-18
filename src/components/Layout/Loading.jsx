@@ -1,5 +1,5 @@
     import logo from "../../assets/CompanyLogo/logo.png";
-    import "./loading.css";
+    import "./Loading.css";
 
     export const Loading = () => {
         return (
