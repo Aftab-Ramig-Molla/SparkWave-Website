@@ -11,7 +11,7 @@
         description=" Explore professional photography and videography services with SparkWave Digital Media through high-quality visuals, promotional videos and creatives."
         />
         <ServicePageLayout
-        title="PHOTOGRAPHY & VEDIO GRAPHY"
+        title="PHOTOGRAPHY & VIDEOGRAPHY"
         intro={
             <>
             <strong className={styles["wd-highlight-text"]}>

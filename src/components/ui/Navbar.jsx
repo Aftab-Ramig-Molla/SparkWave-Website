@@ -53,12 +53,12 @@ export const Navbar = () => {
                                     <li><NavLink to="/services/social-media-handling">SOCIAL MEDIA HANDLING (ORGANIC)</NavLink></li>
                                     <li><NavLink to="/services/ads-paid-marketing">ADS / PAID MARKETING</NavLink></li>
                                     <li><NavLink to="/services/graphics-creation">GRAPHICS CREATION</NavLink></li>
-                                    <li><NavLink to="/services/video-marketing">VIDEO MARKETING & EDITING</NavLink></li>
+                                    <li><NavLink to="/services/video-marketing">VIDEO EDITING & MARKETING</NavLink></li>
                                     <li><NavLink to="/services/leads-genaration">LEADS GENERATION</NavLink></li>
                                     <li><NavLink to="/services/web-development">WEBSITE DEVELOPMENT</NavLink></li>
-                                    <li><NavLink to="/services/photography-vediography">PHOTOGRAPHY & VEDIO GRAPHY</NavLink></li>
+                                    <li><NavLink to="/services/photography-vediography">PHOTOGRAPHY & VIDEOGRAPHY</NavLink></li>
                                     <li><NavLink to="/services/seo-content-writting">SEO & CONTENT WRITING</NavLink></li>
-                                    <li><NavLink to="/services/analytics-and-data">ANALYTICS & DATA</NavLink></li>
+                                    <li><NavLink to="/services/analytics-and-data">ANALYTICS & DATA INSIGHTS</NavLink></li>
                                     <li><NavLink to="/services/reporting">REPORTING</NavLink></li>
                                 </ul>
                             </li>

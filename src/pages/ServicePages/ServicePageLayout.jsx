@@ -15,12 +15,12 @@ export default function ServicePageLayout({
     { name: "SOCIAL MEDIA HANDLING (ORGANIC)", path: "/services/social-media-handling" },
     { name: "ADS / PAID MARKETING", path: "/services/ads-paid-marketing" },
     { name: "GRAPHICS CREATION", path: "/services/graphics-creation" },
-    { name: "VIDEO MARKETING & EDITING", path: "/services/video-marketing" },
+    { name: "VIDEO EDITING & MARKETING  ", path: "/services/video-marketing" },
     { name: "LEADS GENARATION", path: "/services/leads-genaration" },
     { name: "WEBSITE DEVELOPMENT", path: "/services/web-development" },
-    { name: "PHOTOGRAPHY & VEDIO GRAPHY", path: "/services/photography-vediography" },
+    { name: "PHOTOGRAPHY/VIDEOGRAPHY", path: "/services/photography-vediography" },
     { name: "SEO & CONTENT WRITTING", path: "/services/seo-content-writting" },
-    { name: "ANALYTICS AND DATA ANALYSIS", path: "/services/analytics-and-data" },
+    { name: "ANALYTICS & DATA INSIGHTS", path: "/services/analytics-and-data" },
     { name: "REPORTING", path: "/services/reporting" },
   ];
 

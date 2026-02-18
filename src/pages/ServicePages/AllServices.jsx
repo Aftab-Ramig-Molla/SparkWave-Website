@@ -29,7 +29,7 @@
     },
     {
         icon: <FaPhotoVideo />,
-        title: 'VIDEO MARKETING & EDITING',
+        title: 'VIDEO EDITING & MARKETING ',
         description: 'Driving engagement through video marketing and professional video editing, including social media reels, promotional videos, ad creatives, YouTube video editing, and brand storytelling content.',
         link: '/services/photography-vediography',
     },

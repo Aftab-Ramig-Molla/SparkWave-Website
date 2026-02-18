@@ -150,11 +150,12 @@ export const About = () => {
                     <h2 className={styles["section-title"]}>See Our Work in Action</h2>
 
                     <div className={styles["video-responsive-wrapper"]}>
-                    <iframe
+                    {/* <iframe
                         src="https://www.youtube.com/embed/1T7nvaWJJFM"
                         title="YouTube video"
                         allowFullScreen
-                    />
+                    /> */}
+                    <img src="https://res.cloudinary.com/drpcl4uj3/image/upload/v1771427112/Coming_Soon_-_Youtube_Thumbnail_sfuzgw.png" alt="comming soon image" />
                     </div>
                 </div>
                 </section>

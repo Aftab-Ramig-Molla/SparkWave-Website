@@ -11,7 +11,7 @@
                 description="Drive traffic and conversions to your business with best video marketing services by SparkWave Solutions and increase your online presence."
             />
             <ServicePageLayout
-            title="VIDEO MARKETING"
+            title="VIDEO EDITING & MARKETING"
             intro={
                 <>
                 <strong className={styles["wd-highlight-text"]}>Video Marketing</strong>{" "}
