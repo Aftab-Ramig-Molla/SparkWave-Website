@@ -45,7 +45,7 @@
                         <li>WEBSITE DEVELOPMENT</li>
                     </NavLink>
                     <NavLink  to="/services/photography-vediography">
-                        <li>PHOTOGRAPHY & VEDIO GRAPHY</li>
+                        <li>PHOTOGRAPHY & VIDEOGRAPHY</li>
                     </NavLink>
                     <NavLink  to="/services/seo-content-writting">
                         <li>SEO & CONTENT WRITTING</li>
