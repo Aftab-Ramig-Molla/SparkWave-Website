@@ -39,22 +39,31 @@
 
     useEffect(() => {
     const handleResize = () => {
-        if (window.innerWidth <= 768) {
-        setIsMobile(true);
-        setVisibleCount(4); // reset to 4 on mobile
+        const mobile = window.innerWidth <= 768;
+        setIsMobile(mobile);
+
+        if (!mobile) {
+        // Desktop: show all items of current category
+        setVisibleCount(filteredItems.length);
         } else {
-        setIsMobile(false);
-        setVisibleCount(filteredItems.length); // show all on desktop
+        // Mobile: keep current visibleCount (do NOT reset to 4)
+        setVisibleCount((prev) => (prev === 0 ? 4 : prev));
         }
     };
 
-
-
-  handleResize(); // initial check
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-}, [filteredItems.length]);
+    }, [filteredItems.length]);
+
+    useEffect(() => {
+    if (window.innerWidth <= 768) {
+        setVisibleCount(4);
+    } else {
+        setVisibleCount(filteredItems.length);
+    }
+    }, [activeFilter, filteredItems.length]);
 
     const isVideoFile = (src) => {
     return src.endsWith(".mp4") || src.includes("/video/");

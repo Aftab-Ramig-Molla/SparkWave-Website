@@ -269,48 +269,244 @@ RIGHT SIDE FORM
     box-shadow: 0 6px 16px rgba(50, 60, 255, 0.3);
 }
 
-/* ------------------------------
-RESPONSIVENESS
------------------------------- */
-@media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
 
-    .info-card,
-    .form-card {
-        margin-bottom: 20px;
-    }
+
+
+
+
+/* ===================================
+   TABLET (≤ 1024px)
+=================================== */
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .form-card {
+    height: auto;
+  }
+
+  .contact-header-modern {
+    margin-top: 6rem;
+  }
 }
 
-@media (max-width: 600px) {
-    .gradient-text {
-        font-size: 32px;
-    }
 
-    .contact-header-modern p {
-        font-size: 15px;
-    }
+/* ===================================
+   EXTRA SMALL DEVICES (≤ 370px)
+=================================== */
+@media (max-width: 370px) {
 
-    .contact-grid {
-        gap: 25px;
-    }
+  .contact-section-modern {
+    padding: 30px 10px;
+  }
 
-    .info-card,
-    .form-card {
-        padding: 20px;
-    }
+  .contact-header-modern {
+    margin-top: 9rem;
+  }
 
-    .icon-circle {
-        width: 35px;
-        height: 35px;
-    }
+  .gradient-text {
+    font-size: 22px;
+    line-height: 1.2;
+  }
 
-    .submit-btn {
-        font-size: 15px;
-        padding: 12px;
-    }
+  .contact-header-modern p {
+    font-size: 12px;
+  }
+
+  /* Info Card */
+  .info-card {
+    padding: 15px;
+  }
+
+  .info-header h2 {
+    font-size: 18px;
+  }
+
+  .contact-item {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .contact-item h4 {
+    font-size: 14px;
+  }
+
+  .contact-item p {
+    font-size: 12px;
+  }
+
+  .icon-circle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .icon-circle svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Accordion */
+  .accordion-header {
+    padding: 8px 10px;
+  }
+
+  .hours-accordion h4 {
+    font-size: 14px;
+  }
+
+  .flex-items span {
+    font-size: 12px !important;
+  }
+
+  .accordion-content li {
+    font-size: 12px;
+  }
+
+  /* Map */
+  .map-wrapper {
+    height: 160px;
+  }
+
+  /* Form */
+  .form-card {
+    padding: 15px;
+  }
+
+  .form-card h2 {
+    font-size: 18px;
+  }
+
+  .modern-form label {
+    font-size: 12px;
+  }
+
+  .modern-form input,
+  .modern-form textarea {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .submit-btn {
+    font-size: 13px;
+    padding: 10px;
+  }
 }
+
+
+
+/* ===================================
+   SMALL MOBILE (≤ 480px)
+=================================== */
+@media (max-width: 480px) {
+
+  .contact-section-modern {
+    padding: 35px 15px;
+  }
+
+  .contact-header-modern {
+    margin-top: 9rem;
+  }
+
+  .gradient-text {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .contact-header-modern p {
+    font-size: 13px;
+    padding: 0 5px;
+  }
+
+  /* Stack Grid */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  /* Info Card */
+  .info-card {
+    padding: 18px;
+  }
+
+  .info-header h2 {
+    font-size: 19px;
+  }
+
+  .contact-item {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .contact-item h4 {
+    font-size: 15px;
+  }
+
+  .contact-item p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .icon-circle {
+    width: 34px;
+    height: 34px;
+  }
+
+  .icon-circle svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  /* Accordion */
+  .accordion-header {
+    padding: 9px 12px;
+  }
+
+  .hours-accordion h4 {
+    font-size: 15px;
+  }
+
+  .flex-items span {
+    font-size: 13px !important;
+  }
+
+  .accordion-content li {
+    font-size: 13px;
+  }
+
+  /* Map */
+  .map-wrapper {
+    height: 180px;
+  }
+
+  /* Form */
+  .form-card {
+    padding: 18px;
+    height: auto;
+  }
+
+  .form-card h2 {
+    font-size: 19px;
+  }
+
+  .modern-form label {
+    font-size: 13px;
+  }
+
+  .modern-form input,
+  .modern-form textarea {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 11px;
+  }
+}
+
+
 
 /* ===================================
    SAFARI FONT FIX — CONTACT SECTION

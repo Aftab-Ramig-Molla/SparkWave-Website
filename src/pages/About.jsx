@@ -3,6 +3,7 @@ import aboutImg2 from "../assets/about-us2.jpg";
 import styles from "./About.module.css";
 import { useEffect } from "react";
 import SEO from "../components/SEO";
+import { NavLink } from "react-router-dom";
 
 export const About = () => {
     useEffect(() => {
@@ -61,9 +62,9 @@ export const About = () => {
                         <p>
                         We are <b>SparkWave</b>, a result-driven Digital Marketing Agency with 5 years of industry experience in assisting brands to expand, network, and outshine online. We combine innovation and data-driven approaches to provide actual business improvements. We develop customized digital solutions, including SEO, social media marketing, video editing, paid advertisements, graphics design, poster design and web development. 
                         </p>
-                        <button className={`${styles.btn} ${styles["btn-primary"]}`}>
-                        Contact Us
-                        </button>
+                        <NavLink to="/contact" >
+                            <button className={`${styles.btn} ${styles["btn-primary"]}`}>Contact Us</button>  
+                        </NavLink>
                     </div>
 
                     </div>
@@ -164,9 +165,12 @@ export const About = () => {
                 <section className={styles["join-journey-section"]}>
                 <div className={`${styles.container} ${styles["text-center"]}`}>
                     <h2 className={styles["section-title"]}>Join Our Journey</h2>
+                    <NavLink to="/contact">
                     <button className={`${styles.btn} ${styles["btn-primary"]}`}>
                     Get In Touch
                     </button>
+                    </NavLink>
+                    
                 </div>
                 </section>
 
