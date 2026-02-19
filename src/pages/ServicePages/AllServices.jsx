@@ -124,9 +124,12 @@
                 <h2 className={styles.orangeCtaHeading}>
                 Start growing today — book your free strategy call 
                 </h2>
-                <a href="/contact" className={styles.orangeCtaButton}>
+                {/* <a href="/contact" className={styles.orangeCtaButton}>
                 CONTACT WITH US
-                </a>
+                </a> */}
+                <NavLink to="/contact" className={styles.orangeCtaButton}>
+                    CONTACT WITH US
+                </NavLink>
             </div>
             </div>
         </div>
