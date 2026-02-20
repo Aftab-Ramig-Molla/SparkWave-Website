@@ -44,11 +44,11 @@
         answer:
             [
                 "The digital marketing services offered by SparkWave Solutions can be initiated in a couple of easy steps, including: ",
-                "● Get in touch with the team of VoxMediaSolutions and talk about your business objectives and needs.",
+                "● Get in touch with the team of SparkwaveSolutions and talk about your business objectives and needs.",
                 "● Choose the right services (SEO, social media marketing, Google/Facebook ads, web design, etc.), depending on your goals.",
                 "● Determine a targeted business plan and budget.",
                 "● Initiate campaigns and track performance, including frequent reports and optimisation towards better performance.",
-                "VoxMediaSolutions is a strategy-first, results-only company that enables successful business expansion in the digital market."
+                "SparkwaveSolutions is a strategy-first, results-only company that enables successful business expansion in the digital market."
             ]
         },
         {

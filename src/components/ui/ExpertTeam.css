@@ -276,7 +276,7 @@
   }
 
   .expert-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     width: 100%;              /* make title full width */
     text-align: center;       /* center the text */
     /* center block and add spacing below */
@@ -292,7 +292,7 @@
   }
 
   .member-image-container {
-    height: 150px;
+    height: 185px;
   }
 
   .arrow-btn {

@@ -412,44 +412,131 @@
 
 
     /* --- Responsive Design (Mobile) --- */
-    @media (max-width: 992px) {
-    .trustexpertwrapper {
-        flex-direction: column; /* Stack left/right columns */
-    }
-    
-    .trustexpertiseleft,
-    .trustexpertiseright {
-        flex-basis: 100%;
-        width: 100%;
-    }
-    
-    .trustexpertiseright {
-        margin-top: 3rem;
-    }
-    
-    /* --- MODIFICATION: Responsive font size --- */
-    .trustexpertisepara h1 {
-        font-size: 2.5rem;
-    }
+  /* =========================================
+   MEDIA QUERIES (Tablet & Mobile)
+   ========================================= */
 
-    .trustexpertiseright h2 {
-        font-size: 2rem;
-    }
-    }
+/* Tablet Devices (Max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .trustexpertwrapper {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .trustexpertiseleft,
+  .trustexpertiseright {
+    flex-basis: 100%;
+    width: 100%; /* ⭐ CRITICAL FIX: Overrides the 700px desktop width */
+    max-width: 100%;
+  }
 
-    @media (max-width: 576px) {
-    .trustexpertisenumbers {
-        grid-template-columns: 1fr; /* Stack stats on top of each other */
-    }
+  .trustexpertiseright {
+    padding: 40px 0;
+    margin-top: 1rem;
+    border-radius: 16px; /* Matches the left side styling */
+  }
 
-    /* --- MODIFICATION: Responsive font size --- */
-    .trustexpertisepara h1 {
-        font-size: 2.2rem;
-    }
-    
-    /* --- MODIFICATION: Reduce padding on mobile cards --- */
-    .trustexpertiseleft,
-    .trustexpertiseright {
-        padding: 1.5rem;
-    }
-    }
+  .trustexpertisepara h1 {
+    font-size: 2.8rem;
+  }
+
+  /* Make the stat boxes form a 2x2 grid on tablets */
+  .trustexpertisenumbers {
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .trustexpertiselogo {
+    flex: 1 1 calc(50% - 20px); 
+  }
+}
+
+/* Mobile Devices (Max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .trustexpertisesection {
+    padding: 4rem 0;
+  }
+
+  .trustexpertiseleft {
+    padding: 2rem 1.5rem;
+  }
+
+  .trustexpertisepara h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .trustexpertisepara p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .trustexpertiseright h2 {
+    font-size: 2rem;
+  }
+
+  /* Scale down the massive marquee logos for mobile */
+  .partner-img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .partner-name {
+    font-size: 1.2rem;
+  }
+
+  .partner-followers {
+    font-size: 1.1rem;
+  }
+  
+  .partner-scroll {
+    gap: 25px; /* Tighter gap between cards */
+  }
+}
+
+/* Small Mobile Phones (Max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .trustexpertisesection {
+    padding: 3rem 0;
+  }
+
+  .trustexpertiseleft,
+  .trustexpertiseright {
+    padding: 1.5rem 1rem;
+  }
+
+  .trustexpertisepara h1 {
+    font-size: 1.9rem;
+  }
+
+  /* Scale down the big blue counter numbers */
+  .trustexpertisenobold h1 {
+    font-size: 3rem; 
+  }
+
+  .trustexpertisenobold p {
+    font-size: 1rem;
+  }
+
+  /* Stack counters into a single column on very small screens */
+  .trustexpertiselogo {
+    flex: 1 1 100%;
+    justify-content: flex-start; /* Aligns left for better readability */
+    padding: 1.2rem;
+  }
+
+  /* Shrink Marquee images further */
+  .partner-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .partner-scroll {
+    gap: 20px;
+  }
+  
+  .trustexpertiseright h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+  }
+}

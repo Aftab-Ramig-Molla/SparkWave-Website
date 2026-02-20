@@ -3,7 +3,7 @@
     import { portfolioData } from '../../public/portfolioData.js';
     import portfolioVideo from '../assets/PortfolioVideo.mp4';
     import SEO from "../components/SEO";
-
+    import {NavLink} from "react-router-dom";
 
     export const Portfolio = () => {
     const [activeCategory, setActiveCategory] = useState('LOGO DESIGN');
@@ -148,7 +148,9 @@
         <section className={styles['cta-section']}>
             <div className={styles.container}>
             <h3>Ready to bring your vision to life?</h3>
-            <button className={styles['cta-button']}>Start Your Project</button>
+            <NavLink to="/contact">
+                <button className={styles['cta-button']}>Start Your Project</button>
+            </NavLink>
             </div>
         </section>
 

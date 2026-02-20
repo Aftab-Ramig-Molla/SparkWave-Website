@@ -1,125 +1,15 @@
-                // import React from 'react';
-                // import './Testimonials.css';
-                // import { FaStar } from 'react-icons/fa'; // Icon from react-icons
-
-                // // --- Mock Data ---
-                // // We split the data into two rows, just like in the video
-                // const row1 = [
-                // {
-                //     id: 'r1-1',
-                //     text: "Their ability to capture our brand essence in every project is unparalleled - an invaluable creative collaborator.",
-                //     name: "Isabella Rodriguez",
-                //     title: "CEO and Co-founder of ABC Company",
-                //     img: "https://i.pravatar.cc/100?img=1"
-                // },
-                // {
-                //     id: 'r1-2',
-                //     text: "Creative geniuses who listen, understand, and craft captivating visuals - an agency that truly understands our needs.",
-                //     name: "Gabrielle Williams",
-                //     title: "CEO and Co-founder of ABC Company",
-                //     img: "https://i.pravatar.cc/100?img=2"
-                // },
-                // {
-                //     id: 'r1-3',
-                //     text: "Exceeded our expectations with innovative designs that brought our vision to life - a truly remarkable creative agency.",
-                //     name: "Samantha Johnson",
-                //     title: "CEO and Co-founder of ABC Company",
-                //     img: "https://i.pravatar.cc/100?img=3"
-                // },
-                // ];
-
-                // const row2 = [
-                // {
-                //     id: 'r2-1',
-                //     text: "From concept to execution, their creativity knows no bounds - a game-changer for our brand's success.",
-                //     name: "Natalie Martinez",
-                //     title: "CEO and Co-founder of ABC Company",
-                //     img: "https://i.pravatar.cc/100?img=4"
-                // },
-                // {
-                //     id: 'r2-2',
-                //     text: "A refreshing and imaginative agency that consistently delivers exceptional results - highly recommended for any project.",
-                //     name: "Victoria Thompson",
-                //     title: "CEO and Co-founder of ABC Company",
-                //     img: "https://i.pravatar.cc/100?img=5"
-                // },
-                // {
-                //     id: 'r2-3',
-                //     text: "Their team's artistic flair and strategic approach resulted in remarkable campaigns - a reliable creative partner.",
-                //     name: "John Peter",
-                //     title: "CEO and Co-founder of ABC Company",
-                //     img: "https://i.pravatar.cc/100?img=6"
-                // },
-                // ];
-
-                // // --- Card Component ---
-                // // A sub-component to keep our main render clean
-                // const TestimonialCard = ({ text, name, title, img }) => (
-                // <div className="testimonial-card">
-                //     <div className="quote-icon">“</div>
-                //     <p className="card-text">{text}</p>
-                //     <div className="author-info">
-                //     <img src={img} alt={name} className="author-avatar" />
-                //     <div className="author-details">
-                //         <span className="author-name">{name}</span>
-                //         <span className="author-title">{title}</span>
-                //     </div>
-                //     </div>
-                // </div>
-                // );
-
-                // // --- Main Component ---
-                // export const Testimonials = () => {
-                // return (
-                //     <div className="parentTestimonial">
-
-                    
-                //     <div className="testimonial-section">
-                //     <div className="testimonial-header">
-                //         <h2>What Our Clients Say</h2>
-                //     </div>
-
-                //     <div className="testimonial-scroller">
-                //         {/* Top Row */}
-                //         <div className="testimonial-track track-1">
-                //         {/* Render the row twice for the infinite loop */}
-                //         {[...row1, ...row1].map((item, index) => (
-                //             <TestimonialCard 
-                //             key={`${item.id}-${index}`} 
-                //             {...item} 
-                //             />
-                //         ))}
-                //         </div>
-                        
-                //         {/* Bottom Row */}
-                //         <div className="testimonial-track track-2">
-                //         {/* Render the row twice for the infinite loop */}
-                //         {[...row2, ...row2].map((item, index) => (
-                //             <TestimonialCard 
-                //             key={`${item.id}-${index}`} 
-                //             {...item} 
-                //             />
-                //         ))}
-                //         </div>
-                //     </div>
-                //     </div>
-                // </div>
-                // );
-                // };
-
-
-        import React, { useEffect, useRef, useState } from "react";
-        import "./Testimonials.css";
-        
-        import client1 from "../../assets/clients/16.jpg";
-        import client2 from "../../assets/clients/3.png";
-        import client3 from "../../assets/clients/13.JPG";
-        import client4 from "../../assets/clients/6.png";
-        import client5 from "../../assets/clients/30.png";
-        import client6 from "../../assets/clients/5.png";
-        import client7 from "../../assets/clients/34.png";
-        import client8 from "../../assets/clients/4.png";
-        import client9 from "../../assets/clients/24.png";
+import React, { useEffect, useRef, useState } from "react";
+import "./Testimonials.css";
+    
+import client1 from "../../assets/clients/16.jpg";
+import client2 from "../../assets/clients/3.png";
+import client3 from "../../assets/clients/13.JPG";
+import client4 from "../../assets/clients/6.png";
+import client5 from "../../assets/clients/30.png";
+import client6 from "../../assets/clients/5.png";
+import client7 from "../../assets/clients/34.png";
+import client8 from "../../assets/clients/4.png";
+import client9 from "../../assets/clients/24.png";
 
 
         const testimonialsData = [ 
@@ -193,9 +83,7 @@
             },
             
         ]
-        export const Testimonials = () => {
-
-            // ... inside your Testimonials component ...
+    export const Testimonials = () => {
 
     // 1. Change cardsPerView to a state variable
     const [cardsPerView, setCardsPerView] = useState(3);
@@ -223,77 +111,112 @@
     }, []);
 
     // ... rest of your code (useEffect for auto-slide, nextSlide, etc.) ...
-        const [currentIndex, setCurrentIndex] = useState(0);
-        // const cardsPerView = 3;
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const totalSlides = Math.max(
+        1,
+        Math.ceil(testimonialsData.length / cardsPerView)
+    );
+        
+    useEffect(() => {
+        const interval = setInterval(() => {
+        autoScroll();
+    }, 6500); // change speed here
 
-        const startX = useRef(0);
-        const isDragging = useRef(false);
+    return () => clearInterval(interval);
+    }, [cardsPerView]);
 
-        const totalSlides = Math.ceil(testimonialsData.length / cardsPerView);
+        
 
-        useEffect(() => {
-            const interval = setInterval(() => {
-            nextSlide();
-            }, 20000);
 
-            return () => clearInterval(interval);
-        }, []);
+    useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
 
-        const nextSlide = () => {
-            setCurrentIndex((prev) =>
-            prev + cardsPerView >= testimonialsData.length ? 0 : prev + cardsPerView
-            );
-        };
 
-        const prevSlide = () => {
-            setCurrentIndex((prev) =>
-            prev - cardsPerView < 0
-                ? (totalSlides - 1) * cardsPerView
-                : prev - cardsPerView
-            );
-        };
+    const handleScroll = () => {
+    const card = container.querySelector(".testimonial-card");
+    if (!card) return;
 
-        // 🖱️ Mouse Events
-        const handleMouseDown = (e) => {
-            startX.current = e.clientX;
-            isDragging.current = true;
-        };
+    // Get the dynamic gap from CSS
+    const gap = parseInt(window.getComputedStyle(container).gap) || 0;
+    const cardWidth = card.offsetWidth + gap; 
+    
+    const index = Math.round(container.scrollLeft / (cardWidth * cardsPerView));
+    setCurrentIndex(index * cardsPerView);
+    };
 
-        const handleMouseMove = (e) => {
-            if (!isDragging.current) return;
+    container.addEventListener("scroll", handleScroll);
 
-            const diff = startX.current - e.clientX;
+    return () => container.removeEventListener("scroll", handleScroll);
+    }, [cardsPerView]);
+        
+    const scrollRef = useRef(null);
+    const isDown = useRef(false);
+    const startX = useRef(0);
+    const scrollLeft = useRef(0);
 
-            if (diff > 80) {
-            nextSlide();
-            isDragging.current = false;
-            } else if (diff < -80) {
-            prevSlide();
-            isDragging.current = false;
-            }
-        };
 
-        const handleMouseUp = () => {
-            isDragging.current = false;
-        };
+    const autoScroll = () => {
+    if (!scrollRef.current) return;
 
-        const visibleCards = testimonialsData.slice(
-            currentIndex,
-            currentIndex + cardsPerView
-        );
+    const container = scrollRef.current;
+    const card = container.querySelector(".testimonial-card");
+    if (!card) return;
+
+    // Get the dynamic gap from CSS
+    const gap = parseInt(window.getComputedStyle(container).gap) || 0;
+    const cardWidth = card.offsetWidth + gap;
+    
+    const maxScroll = container.scrollWidth - container.clientWidth;
+
+        if (container.scrollLeft >= maxScroll - 5) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+        container.scrollBy({
+            left: cardWidth * cardsPerView,
+            behavior: "smooth",
+        });
+        }
+    };
+
+
+    const handleMouseDown = (e) => {
+    isDown.current = true;
+    scrollRef.current.classList.add("active");
+    startX.current = e.pageX - scrollRef.current.offsetLeft;
+    scrollLeft.current = scrollRef.current.scrollLeft;
+    };
+
+    const handleMouseLeave = () => {
+    isDown.current = false;
+    };
+
+    const handleMouseUp = () => {
+    isDown.current = false;
+    };
+
+    const handleMouseMove = (e) => {
+    if (!isDown.current) return;
+    e.preventDefault();
+    
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX.current) * 2; // ⭐ smoother
+    scrollRef.current.scrollLeft = scrollLeft.current - walk;
+    };
 
         return (
             <section className="testimonials-section">
             <h2 className="title">What Our Clients Says</h2>
 
             <div
-                className="cards-container"
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onMouseLeave={handleMouseUp}
+            className="cards-container"
+            ref={scrollRef}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
             >
-                {visibleCards.map((item) => (
+                {testimonialsData.map((item) => (
                 <div className="testimonial-card" key={item.id}>
                     <img src={item.image} alt={item.name} />
                     <h3>{item.name}</h3>
@@ -311,7 +234,23 @@
                     className={`dot ${
                     index * cardsPerView === currentIndex ? "active" : ""
                     }`}
-                    onClick={() => setCurrentIndex(index * cardsPerView)}
+                onClick={() => {
+                const container = scrollRef.current;
+                const card = container.querySelector(".testimonial-card");
+                if (!card) return;
+
+                // Get the dynamic gap from CSS
+                    const gap = parseInt(window.getComputedStyle(container).gap) || 0;
+                    const cardWidth = card.offsetWidth + gap;
+                    const scrollAmount = index * cardWidth * cardsPerView;
+
+                    container.scrollTo({
+                    left: scrollAmount,
+                    behavior: "smooth",
+                    });
+
+                    setCurrentIndex(index * cardsPerView);
+                }}
                 ></span>
                 ))}
             </div>
