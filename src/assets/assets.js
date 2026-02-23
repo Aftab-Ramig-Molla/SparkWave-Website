@@ -1,6 +1,6 @@
 // 🖼️ General Images
 import logo1 from "./logo1.png";
-import hero_pic from "./hero_pic.gif";
+import hero_video from "./hero_pic.mp4";
 import background_img from "./background_img.png";
 import background_img2 from "./background_img2.png";
 import co_founder_image from "./co-founderimg.png";
@@ -9,7 +9,7 @@ import co_founder_image from "./co-founderimg.png";
 // 🌈 Export Main Assets (for hero section, etc.)
 export const assets = {
     logo1,
-    hero_pic,
+    hero_video,
     background_img,
     background_img2,
     co_founder_image,

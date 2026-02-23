@@ -12,10 +12,10 @@
                 description="SparkWave elevates your brand's visual appeal with stunning graphics design services. Now, stand out from the crowd and increase your online presence."
             />
             <ServicePageLayout
-            title="GRAPHICS DESIGN"
+            title="GRAPHICS CREATION"
             intro={
                 <>
-                <strong className={styles["wd-highlight-text"]}>Graphics Design</strong>{" "}
+                <strong className={styles["wd-highlight-text"]}>Graphics Creation</strong>{" "}
                 gives the brand a visual base. It turns ideas into powerful and impactful visuals that help to deliver essential messages, brand identity, and influence audiences. 
                 Whether it is social media posts and ad creatives or brand assets and marketing images, good design is what helps a business to stand out and be memorable. Our designs are clean, modern, contemporary, purpose-driven, and targeted.
                 </>
@@ -23,7 +23,7 @@
             image={GraphicsImg}
             strategies={[
                 {
-                heading: "CREATIVE DESIGN PROCESS",
+                heading: "OUR CREATIVE WORKFLOW",
                 items: [
                     {
                     label: "Discovery and Design Planning  ",

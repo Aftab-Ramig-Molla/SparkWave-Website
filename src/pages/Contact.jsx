@@ -172,6 +172,7 @@ export const Contact = () => {
                         }}
                         >
                         {shopStatus.isOpen ? 'Open Now' : 'Closed Now'} • 10:00 AM - 6:00 PM
+                        
                     </span>
                     </div>
                     </div>
@@ -193,7 +194,17 @@ export const Contact = () => {
                             <span style={{ width: '6px', height: '6px', background: '#60a5fa', borderRadius: '50%' }}></span>
                             )}
                         </span>
-                        <span className="time">10:00 AM - 6:00 PM</span>
+                        <span 
+                        className="time"
+                        style={{
+                            color: day === "Sunday" ? "#ef4444" : "",
+                            fontWeight: "600",
+                            fontSize: "1.7rem",
+                        }}
+                        >
+                        
+                            { day === "Sunday" ? "Closed" : "10:00 AM - 6:00 PM" }
+                        </span>
                         </li>
                     ))}
                     </ul>

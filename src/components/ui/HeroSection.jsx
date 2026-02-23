@@ -27,11 +27,15 @@ export const HeroSection = () => {
                 </div>
 
                 <div className="hero-image">
-                    <img 
-                        src={assets.hero_pic} 
-                        alt="Spark Wave Picture" 
-                        className="banner-image"
-                    />
+                <video
+                    className="banner-image"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                >
+                    <source src={assets.hero_video} type="video/mp4" />
+                </video>
                 </div>
             </div>
         </main>

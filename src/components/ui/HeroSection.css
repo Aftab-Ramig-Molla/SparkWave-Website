@@ -103,9 +103,14 @@
 
     .hero-image .banner-image {
         /* Ensures the image scales down if needed and prevents overflow */
-        max-width: 100%; 
+        /* max-width: 100%; 
         height: 420px; 
         width: 420px;
+        display: block; */
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        object-fit: contain;
         display: block;
     }
 

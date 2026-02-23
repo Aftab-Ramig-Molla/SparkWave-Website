@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useState, useEffect } from "react";
 import { FaSortDown } from "react-icons/fa";
 import "./Navbar.css";
-
+import React from "react";
 
 export const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
